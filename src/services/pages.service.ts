@@ -12,7 +12,7 @@ export const uploadImage = async (image?: File | null, basePath?: string) => {
     if (image) {
       const uploadsDir = path.join(
         process.cwd(),
-        `public${process.env.NEXT_PUBLIC_DYNAMIC_IMAGES_BASE_PATH}/${basePath}`
+        `public${process.env.NEXT_PUBLIC_DYNAMIC_IMAGES_BASE_PATH}/${basePath}`,
       );
 
       if (!fs.existsSync(uploadsDir)) {
@@ -44,17 +44,16 @@ export const addOrUpdatePage = async (pageId: string | null, pageData: any) => {
     await connectToDatabase();
 
     const publishDateField = pageData?.fields?.find(
-      (field: any) => field.key === "publishDate"
+      (field: any) => field.key === "publishDate",
     );
 
     const publishDate =
       publishDateField && !isNaN(new Date(publishDateField.value).getTime())
         ? new Date(publishDateField.value)
         : new Date(); // fallback to today if invalid
-
     if (
       pageData?.fields?.some(
-        (field: any) => field.key === "makehome" && field.value === true
+        (field: any) => field.key === "makehome" && field.value === true,
       )
     ) {
       const pagesWithMakeHomeTrue = await Pages.find({
@@ -64,12 +63,12 @@ export const addOrUpdatePage = async (pageId: string | null, pageData: any) => {
       for (const page of pagesWithMakeHomeTrue) {
         if (page._id?.toString() !== pageId) {
           const updatedFields = page.fields.map((field: any) =>
-            field.key === "makehome" ? { ...field, value: false } : field
+            field.key === "makehome" ? { ...field, value: false } : field,
           );
           await Pages.findByIdAndUpdate(
             page._id,
             { $set: { fields: updatedFields } },
-            { new: true }
+            { new: true },
           );
         }
       }
@@ -90,7 +89,7 @@ export const addOrUpdatePage = async (pageId: string | null, pageData: any) => {
             publishDate: publishDate,
           },
         },
-        { new: true }
+        { new: true },
       );
 
       return { success: true, message: "Page updated successfully." };
@@ -109,9 +108,38 @@ export const addOrUpdatePage = async (pageId: string | null, pageData: any) => {
   }
 };
 
+// export const getAllPages = async (
+//   componentType: string,
+//   sortByPublishDate: boolean = false
+// ) => {
+//   try {
+//     await connectToDatabase();
+//     const pages = await Pages.find({ componentType })
+//       .sort({ [sortByPublishDate ? "publishDate" : "createdAt"]: -1 })
+//       .lean();
+
+//     // const pages = await Pages.find().lean();
+
+//     const sanitizedPages = pages.map((page: any) => ({
+//       ...page,
+//       _id: page._id.toString(),
+//       createdAt: page.createdAt?.toISOString(),
+//       updatedAt: page.updatedAt?.toISOString(),
+//       fields: page.fields.map((field: any) => ({
+//         ...field,
+//         _id: field._id.toString(),
+//       })),
+//     }));
+
+//     return sanitizedPages;
+//   } catch (error) {
+//     throw new Error("Failed to fetch pages.");
+//   }
+// };
+
 export const getAllPages = async (
   componentType: string,
-  sortByPublishDate: boolean = false
+  sortByPublishDate: boolean = false,
 ) => {
   try {
     await connectToDatabase();
@@ -119,18 +147,27 @@ export const getAllPages = async (
       .sort({ [sortByPublishDate ? "publishDate" : "createdAt"]: -1 })
       .lean();
 
-    // const pages = await Pages.find().lean();
+    const sanitizedPages = pages.map((page: any) => {
+      const updatedFields = page.fields.map((field: any) => {
+        // If it's the slug field and componentType is blog, prepend clickup-guides
+        if (field.key === "slug" && componentType === "blog") {
+          return {
+            ...field,
+            value: `clickup-guides/${field.value}`,
+            _id: field._id.toString(),
+          };
+        }
+        return { ...field, _id: field._id.toString() };
+      });
 
-    const sanitizedPages = pages.map((page: any) => ({
-      ...page,
-      _id: page._id.toString(),
-      createdAt: page.createdAt?.toISOString(),
-      updatedAt: page.updatedAt?.toISOString(),
-      fields: page.fields.map((field: any) => ({
-        ...field,
-        _id: field._id.toString(),
-      })),
-    }));
+      return {
+        ...page,
+        _id: page._id.toString(),
+        createdAt: page.createdAt?.toISOString(),
+        updatedAt: page.updatedAt?.toISOString(),
+        fields: updatedFields,
+      };
+    });
 
     return sanitizedPages;
   } catch (error) {
@@ -150,7 +187,7 @@ export const getAllPageSlugsForSitemap = async () => {
     const pageSlugs = pages
       .map((page: any) => {
         const slug = page.fields.find(
-          (field: any) => field.key === "slug"
+          (field: any) => field.key === "slug",
         )?.value;
 
         if (!slug) return null;
@@ -210,7 +247,7 @@ export const deletePage = async (id: string) => {
 
 export const getOnePage = async (
   slug: string,
-  getHomePage: boolean = false
+  getHomePage: boolean = false,
 ) => {
   try {
     await connectToDatabase();

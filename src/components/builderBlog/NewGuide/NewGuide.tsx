@@ -57,33 +57,36 @@ const NewGuide: React.FC<{ data: any }> = ({ data }) => {
         {/* Main Content */}
         <div className="main-content">
           {guides && guides.length > 0 ? (
-            guides.map((guide: Guides, index: number) => (
-              <div
-                id={`guidesection-${index}`}
-                key={index}
-                className="guidesection"
-              >
-                <h2>{guide.title}</h2>
-                {guide.text && (
+            (() => {
+              let tocIndex = 0; // Counter for guides with titles
+              return guides.map((guide: Guides, index: number) => {
+                const hasTitle = guide.title?.trim();
+                const id = hasTitle ? `guidesection-${tocIndex}` : undefined;
+                if (hasTitle) tocIndex++; // Increment only if title exists
+
+                return (
                   <div
-                    dangerouslySetInnerHTML={{
-                      __html: guide.text,
-                    }}
-                  />
-                )}
-                {guide.image && (
-                  <Image
-                    src={getImagePath(
-                      "bgsec1img.webp",
-                      guide.image ? guide.image : ""
+                    key={index}
+                    {...(id ? { id } : {})}
+                    className="guidesection"
+                    style={{ scrollMarginTop: "88px" }}
+                  >
+                    {guide.title && <h2>{guide.title}</h2>}
+                    {guide.text && (
+                      <div dangerouslySetInnerHTML={{ __html: guide.text }} />
                     )}
-                    alt={guide.title || "Guide section image"}
-                    width={1200}
-                    height={1200}
-                  />
-                )}
-              </div>
-            ))
+                    {guide.image && (
+                      <Image
+                        src={getImagePath("bgsec1img.webp", guide.image)}
+                        alt={guide.title || "Guide section image"}
+                        width={1200}
+                        height={1200}
+                      />
+                    )}
+                  </div>
+                );
+              });
+            })()
           ) : (
             <p>No content available.</p>
           )}

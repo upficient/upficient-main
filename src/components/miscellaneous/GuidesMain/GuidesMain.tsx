@@ -12,7 +12,8 @@ function GuidesMain(type: any) {
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const { itemsPerPage = 6 } = type;
+  const { excludeSlug = "" } = type;
   const totalPages = Math.ceil(data.length / itemsPerPage);
   const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
@@ -28,7 +29,15 @@ function GuidesMain(type: any) {
     setLoading(true);
     try {
       const pagesData = await getAllPages(type.type, true);
-      setData(pagesData);
+      const filteredData = excludeSlug
+        ? pagesData.filter(
+            (page: any) =>
+              page.fields.find((f: any) => f.key === "slug")?.value !==
+              excludeSlug,
+          )
+        : pagesData;
+
+      setData(filteredData);
     } catch (error) {
       console.error("Error fetching blogs:", error);
     } finally {
@@ -50,7 +59,7 @@ function GuidesMain(type: any) {
 
   const paginatedData = data.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   );
 
   return (
@@ -66,17 +75,17 @@ function GuidesMain(type: any) {
                   {paginatedData.map((item: any) => {
                     const pageTitle =
                       item.fields.find(
-                        (field: any) => field.key === "pageTitle"
+                        (field: any) => field.key === "pageTitle",
                       )?.value || "Untitled";
                     const slug =
                       item.fields.find((field: any) => field.key === "slug")
                         ?.value || "#";
                     const featureImage = item.fields.find(
-                      (field: any) => field.key === "featureImage"
+                      (field: any) => field.key === "featureImage",
                     )?.value;
                     const metaDescription =
                       item.fields.find(
-                        (field: any) => field.key === "metaDescription"
+                        (field: any) => field.key === "metaDescription",
                       )?.value || "";
 
                     return (
@@ -89,7 +98,7 @@ function GuidesMain(type: any) {
                                 <p>
                                   {new Date(item.publishDate).toLocaleString(
                                     "en-US",
-                                    { month: "short" }
+                                    { month: "short" },
                                   )}
                                 </p>
                               </>
@@ -105,7 +114,7 @@ function GuidesMain(type: any) {
                             <Image
                               src={getImagePath(
                                 "hero_front.webp",
-                                featureImage
+                                featureImage,
                               )}
                               alt={pageTitle}
                               width={400}
@@ -152,7 +161,7 @@ function GuidesMain(type: any) {
                       {data.slice(0, 3).map((post: any) => {
                         const recentTitle =
                           post.fields.find(
-                            (field: any) => field.key === "pageTitle"
+                            (field: any) => field.key === "pageTitle",
                           )?.value || "Untitled";
                         const recentSlug =
                           post.fields.find((field: any) => field.key === "slug")

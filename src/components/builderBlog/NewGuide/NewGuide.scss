@@ -67,7 +67,6 @@ section.content-sectiontoc.d-flex {
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 1rem;
-  margin-top: 20px;
 }
 
 .inr-toc {
@@ -80,6 +79,7 @@ section.content-sectiontoc.d-flex {
 }
 .guidesection {
   text-align: left;
+  margin-top: 20px;
 }
 .guidesection ol {
   font-size: 24px;
@@ -91,10 +91,15 @@ section.content-sectiontoc.d-flex {
 .guidesection ol li {
   margin-bottom: 16px;
 }
-.guidesection ol ul {
+.guidesection ol,
+.guidesection ul {
   margin-left: 20px;
   font-size: 20px;
   font-weight: 300;
+}
+.guidesection ul li {
+  list-style: disc !important;
+  margin-bottom: 10px;
 }
 .guidesection p {
   font-size: 20px;

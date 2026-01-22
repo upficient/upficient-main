@@ -12,7 +12,11 @@ function OtherGuides({ data }: any) {
             </div>
           </div>
         </div>
-        <GuidesMain type={data.type ? data.type : "blog"} />
+        <GuidesMain
+          type={data.type ? data.type : "blog"}
+          itemsPerPage={4}
+          excludeSlug={data.excludeSlug}
+        />
       </div>
     </>
   );
@@ -20,7 +24,10 @@ function OtherGuides({ data }: any) {
 
 export const meta = {
   name: "otherGuides",
-  fields: [{ key: "type", label: "Type", type: "text" }],
+  fields: [
+    { key: "type", label: "Type", type: "text" },
+    { key: "excludeSlug", label: "Exclude Slug", type: "text" },
+  ],
 };
 
 export default OtherGuides;
