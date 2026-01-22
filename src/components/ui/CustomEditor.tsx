@@ -12,7 +12,7 @@ const CustomEditor: React.FC<CustomEditorProps> = ({ value, onChange }) => {
   const debouncedOnChange = useRef(
     _.debounce((content: string) => {
       onChange(content);
-    }, 300)
+    }, 300),
   ).current;
 
   const handleEditorChange = (content: string) => {
@@ -22,7 +22,7 @@ const CustomEditor: React.FC<CustomEditorProps> = ({ value, onChange }) => {
 
   return (
     <Editor
-      apiKey="eavu2ljl6xibljuuzhr5hrtliybd0rnbz34v9ebn12aqrwee"
+      apiKey="einpz4pgbjx1yhnarb5zxjo574l9szqjvqp8pad7me2pejfo"
       init={{
         plugins: [
           "anchor",
@@ -76,7 +76,7 @@ const CustomEditor: React.FC<CustomEditorProps> = ({ value, onChange }) => {
         ],
         ai_request: (request: any, respondWith: any) =>
           respondWith.string(() =>
-            Promise.reject("See docs to implement AI Assistant")
+            Promise.reject("See docs to implement AI Assistant"),
           ),
       }}
       value={editorContent}
