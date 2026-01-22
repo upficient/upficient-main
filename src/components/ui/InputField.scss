@@ -1,0 +1,61 @@
+.input-field {
+  position: relative;
+  width: 250px;
+  height: 44px;
+  line-height: 44px;
+}
+label.inputlabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #d3d3d3;
+  transition: 0.2s all;
+  cursor: text;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="password"] {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #d3d3d3;
+  box-shadow: none;
+  color: #111;
+}
+input:invalid {
+  outline: 0;
+}
+input:focus,
+input:valid {
+  border-color: #402e63;
+}
+
+input[type="text"]:focus ~ label,
+input[type="email"]:focus ~ label,
+input[type="tel"]:focus ~ label,
+input[type="url"]:focus ~ label,
+input[type="password"]:focus ~ label,
+input[type="text"]:valid ~ label,
+input[type="email"]:valid ~ label,
+input[type="tel"]:valid ~ label,
+input[type="url"]:valid ~ label,
+input[type="password"]:valid ~ label {
+  font-size: 14px;
+  top: -24px;
+  color: #402e63;
+}
+p.text-error {
+  font-size: 12px;
+  color: red;
+}
+p.text-error svg {
+  height: 14px;
+  margin-right: 5px;
+  fill: red;
+  position: relative;
+  top: 2px;
+}

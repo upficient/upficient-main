@@ -1,0 +1,31 @@
+.singleCaseAbout {
+  padding: 50px 0px;
+  .singleImg {
+    padding-right: 50px;
+    // height: 400px;
+  }
+  .singleCaseContent {
+    .text {
+      padding-top: 50px;
+      padding-bottom: 30px;
+      p {
+        padding: 3px 0px;
+        color: var(--primary);
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .singleCaseAbout {
+    .singleImg {
+      padding: 0;
+    }
+    .singleCaseContent {
+      padding-top: 30px;
+    }
+  }
+}

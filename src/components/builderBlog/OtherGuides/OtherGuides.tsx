@@ -1,0 +1,26 @@
+import GuidesMain from "@/components/miscellaneous/GuidesMain/GuidesMain";
+import "./OtherGuides.scss";
+
+function OtherGuides({ data }: any) {
+  return (
+    <>
+      <div className="otherGuides">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <h2>Other Guides</h2>
+            </div>
+          </div>
+        </div>
+        <GuidesMain type={data.type ? data.type : "blog"} />
+      </div>
+    </>
+  );
+}
+
+export const meta = {
+  name: "otherGuides",
+  fields: [{ key: "type", label: "Type", type: "text" }],
+};
+
+export default OtherGuides;

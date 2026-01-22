@@ -1,0 +1,158 @@
+@import "react-toastify/dist/ReactToastify.css";
+
+:root {
+  --bg-color: #f5f5f5;
+  --white: #fff;
+  --orange: #ffa736;
+  --primary: #402e63;
+  --secondary: #a064ff;
+  --text: #545263;
+  --bg-purple: #e6e2ff33;
+}
+
+html,
+body {
+  font-family: "poppins";
+  scroll-behavior: smooth;
+}
+main.front-wrapper {
+  margin-top: 81px;
+}
+h1 {
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 65px;
+  color: var(--primary);
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+.btn a {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--orange);
+  padding: 10px 20px;
+  border-radius: 40px;
+
+  &:hover {
+    background: var(--primary);
+  }
+}
+
+h2 {
+  font-size: 45px;
+  line-height: 54px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 36px;
+  line-height: 41px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 27px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--text);
+}
+
+.subHead {
+  p {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: var(--secondary);
+    background: #f7f3ff;
+    border-radius: 50px;
+    padding: 8px 15px;
+    display: inline;
+  }
+}
+
+.readMore a {
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--primary);
+  background: #f7f3ff;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-weight: 600;
+  display: inline;
+}
+
+.bg-purple {
+  background: var(--bg-purple);
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 45px;
+    line-height: 54px;
+  }
+
+  h2 {
+    font-size: 35px;
+    line-height: 42px;
+  }
+
+  h3 {
+    font-size: 30px;
+    line-height: 37px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .mainHead {
+    padding-top: 50px !important;
+  }
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.bdr-15 {
+  border-radius: 15px;
+}
+
+.p15 {
+  padding: 15px;
+}
+
+.pagetitle {
+  margin-bottom: 10px;
+  margin-top: 13px;
+
+  h2 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
+
+.btn-dash {
+  font-size: 16px;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}

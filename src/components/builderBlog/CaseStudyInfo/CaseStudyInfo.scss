@@ -1,0 +1,45 @@
+.caseInfo {
+  padding: 100px 0px;
+  .content {
+    padding-right: 50px;
+    p {
+      padding: 20px 0px;
+    }
+  }
+  .infoByCat {
+    flex-wrap: wrap;
+    .singleInfo {
+      padding: 20px;
+      gap: 10px;
+      .icon {
+        font-size: 22px;
+        color: var(--secondary);
+      }
+      .texts {
+        h4 {
+          font-size: 22px;
+          color: var(--text);
+        }
+        p {
+          padding-top: 10px;
+          font-size: 22px;
+          color: var(--text);
+        }
+      }
+    }
+  }
+  .infoByCat > div {
+    flex: 0 50%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .caseInfo {
+    padding: 50px 0px;
+    .content {
+      padding: 0;
+    }
+    .infoByCat > div {
+      flex: 0 100%;
+    }
+  }
+}

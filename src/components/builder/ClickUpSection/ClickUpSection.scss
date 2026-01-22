@@ -1,0 +1,44 @@
+.clickup {
+  padding: 80px 0px;
+  background: var(--bg-color);
+  .content {
+    .heading {
+      color: var(--secondary);
+    }
+    .para {
+      padding-top: 20px;
+    }
+  }
+  .servBoxes {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: end;
+  }
+  .servBoxes > div {
+    flex: 0 calc(50% - 10px);
+  }
+}
+// rating
+.rating {
+  padding: 80px 0px;
+  background: var(--bg-color);
+}
+
+@media screen and (max-width: 768px) {
+  .clickup {
+    .servBoxes {
+      margin-top: 50px;
+    }
+  }
+  .rating {
+    padding: 50px 0px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .clickup {
+    .servBoxes > div {
+      flex: 0 100%;
+    }
+  }
+}

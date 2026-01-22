@@ -1,0 +1,32 @@
+.clickBox {
+  padding: 30px;
+  background: var(--white);
+  border-radius: 20px;
+
+  .clickImg {
+    height: 153px;
+    // width: 200px;
+  }
+
+  .title {
+    padding-top: 30px;
+
+    h4 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .clickBox {
+    .title h4 {
+      font-size: 22px;
+    }
+
+    .clickImg {
+      height: 100px;
+    }
+  }
+}

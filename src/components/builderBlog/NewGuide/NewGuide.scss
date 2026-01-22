@@ -1,0 +1,109 @@
+.content-section {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+/* TOC Sidebar */
+section.content-sectiontoc.d-flex {
+  background: #eae6ff;
+}
+
+.toc {
+  flex: 0 0 250px;
+  background: var(--white);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  align-self: flex-start;
+  position: sticky;
+  top: 100px; /* stays fixed after scrolling */
+  height: -moz-max-content;
+  height: max-content;
+  background: linear-gradient(45deg, #e6e2ff, #ffffff);
+}
+
+.toc h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc ul li {
+  margin-bottom: 10px;
+}
+
+.toc ul li a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s;
+}
+
+.toc ul li a:hover {
+  color: var(--secondary);
+}
+
+/* Right Content */
+.main-content {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.main-content h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  margin-top: 20px;
+}
+
+.inr-toc {
+  border-top-left-radius: 150px;
+  background: #fff;
+  padding: 7em 5em 7em 5em;
+  display: flex;
+  gap: 6%;
+  width: 100%;
+}
+.guidesection {
+  text-align: left;
+}
+.guidesection ol {
+  font-size: 24px;
+  font-weight: 600;
+  color: #402e63;
+  margin-left: 22px;
+  margin-top: 12px;
+}
+.guidesection ol li {
+  margin-bottom: 16px;
+}
+.guidesection ol ul {
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: 300;
+}
+.guidesection p {
+  font-size: 20px;
+  color: #402e63;
+  line-height: 34px;
+}
+.guidesection img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  margin: 20px 0 0;
+}

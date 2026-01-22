@@ -1,0 +1,38 @@
+.journey {
+  padding: 50px 0px;
+  .mainJourney {
+    flex-wrap: wrap;
+    gap: 50px;
+    .icon {
+      height: 100px;
+      width: 100px;
+    }
+    .subTitle {
+      padding-top: 10px;
+      p {
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: 700;
+        color: var(--secondary);
+      }
+    }
+    .title {
+      h5 {
+        font-size: 20px;
+        line-height: 27px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+    }
+  }
+  .mainJourney > div {
+    flex: 0 21%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .journey {
+    .mainJourney > div {
+      flex: 0 100%;
+    }
+  }
+}

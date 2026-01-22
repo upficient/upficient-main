@@ -1,0 +1,28 @@
+.text-block {
+  p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  a {
+    color: var(--primary);
+  }
+  ul,
+  ol {
+    margin-left: 25px;
+    li {
+      margin-bottom: 8px;
+      font-size: 16px;
+      line-height: 24px;
+      p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+  h2,
+  h3 {
+    font-size: 36px;
+    line-height: 41px;
+    color: var(--primary);
+  }
+}

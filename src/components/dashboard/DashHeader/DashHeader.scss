@@ -1,0 +1,31 @@
+.dash-header {
+  padding: 8px 15px 0;
+  border-bottom: 1px solid #ddd;
+  background-color: var(--white);
+
+  .head-user-box {
+    gap: 10px;
+    cursor: pointer;
+
+    .user-img {
+      img {
+        border-radius: 50%;
+        height: 36px;
+        width: 36px;
+      }
+    }
+
+    .user-details {
+      h3 {
+        font-size: 12px;
+        line-height: 12px;
+      }
+
+      p {
+        font-size: 10px;
+        line-height: 10px;
+        margin-top: 3px;
+      }
+    }
+  }
+}

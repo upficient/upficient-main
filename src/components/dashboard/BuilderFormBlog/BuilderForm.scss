@@ -1,0 +1,86 @@
+.sidebar {
+  flex: 0 26%;
+  height: 100%;
+  overflow: scroll;
+}
+.main-content-form {
+  flex: 0 74%;
+  overflow: scroll;
+}
+.tab-content {
+  padding: 20px;
+}
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  button {
+    flex: 0 50%;
+    background: #cfceff8b;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    cursor: pointer;
+    padding: 20px 0;
+    &:first-child {
+      border-right: 1px solid lightgray;
+    }
+  }
+}
+.listmain {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+
+  & > div {
+    width: calc(50% - 10px) !important;
+    margin: 0 !important;
+    word-break: break-word;
+    font-size: 14px;
+  }
+}
+.form-field > * {
+  display: block;
+  width: 100%;
+}
+.form-field label {
+  margin-bottom: 9px;
+}
+.form-field input {
+  height: 36px;
+  margin-bottom: 12px;
+  box-shadow: none;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  padding: 10px;
+}
+h3.seo-setting {
+  margin: 32px 0 10px;
+  font-size: 23px;
+}
+.side-footer {
+  height: 53px;
+
+  .buttons {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    button {
+      width: 50%;
+      border: none;
+      border-radius: 0;
+      outline: none;
+      cursor: pointer;
+      background-color: #cfceff8b;
+      border-right: 1px solid lightgray;
+    }
+  }
+}
+.tab-area {
+  height: calc(100% - 53px);
+  overflow: overlay;
+}
+.modaltitle {
+  margin: 0px 0 32px;
+  font-size: 23px;
+}

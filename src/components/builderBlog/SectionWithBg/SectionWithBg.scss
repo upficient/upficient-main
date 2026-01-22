@@ -1,0 +1,37 @@
+.colorbgSec {
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 50px 0px;
+  // height: 700px;
+  h1 {
+    font-size: 45px;
+    line-height: 54px;
+    font-weight: 700;
+  }
+  .img {
+    height: 550px;
+    // width: 650px;
+    // padding-top: 100px;
+  }
+  .content {
+    .heading {
+      color: var(--white);
+    }
+    .para p {
+      color: inherit;
+      padding: 30px 0px;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .colorbgSec {
+    h1 {
+      font-size: 35px;
+      line-height: 42px;
+    }
+    .content {
+      padding-top: 50px;
+    }
+  }
+}

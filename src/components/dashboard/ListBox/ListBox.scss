@@ -1,0 +1,94 @@
+.list-head,
+.list-content-inner {
+  gap: 20px;
+  & > div {
+    flex: 1;
+  }
+  // & > div:first-child {
+  //   flex: 0 0 40%; // The first child takes up 30% of the width
+  // }
+}
+.list-head {
+  padding: 22px 20px;
+  & > div {
+    h3 {
+      color: #6b7280;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 14px;
+    }
+  }
+}
+.list-content {
+  .list-content-inner {
+    padding: 22px 20px;
+    border-bottom: 1px solid #d3d3d362;
+    &:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+    & > div {
+      h3 {
+        color: #000;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+      }
+    }
+    .status,
+    .pub-date {
+      h3 {
+        font-size: 14px;
+      }
+    }
+    .action {
+      gap: 5px;
+      & > div {
+        height: 20px;
+        width: 20px;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #cfceff8b;
+        &:nth-child(even) {
+          background-color: #fae37c73;
+        }
+
+        a,
+        .icon {
+          cursor: pointer;
+          display: flex;
+          svg {
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+.pagination {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  gap: 10px;
+  padding-right: 30px;
+  button {
+    height: 20px;
+    width: 20px;
+    background: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+    svg {
+      height: 18px;
+    }
+  }
+}

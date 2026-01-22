@@ -1,0 +1,86 @@
+// sidebar
+.dash-sidebar {
+  flex: 0 14%;
+  min-height: calc(100vh - 52.9px);
+  padding-top: 15px;
+  background-color: var(--white);
+
+  .list-item {
+    a {
+      padding: 10px 15px;
+      gap: 5px;
+      color: #6b7280;
+      font-size: 14px;
+      border-radius: 0 5px 5px 0;
+
+      &.active {
+        color: var(--primary);
+        font-weight: 600;
+
+        svg {
+          fill: var(--primary);
+        }
+      }
+
+      svg {
+        fill: #6b7280;
+        height: 20px;
+      }
+
+      &:hover {
+        background-color: rgba(221, 221, 221, 0.3);
+      }
+    }
+  }
+}
+
+.menu-toggle {
+  cursor: pointer;
+  gap: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #6b7280;
+  border-radius: 0 5px 5px 0;
+
+  svg {
+    fill: #6b7280;
+    height: 20px;
+  }
+
+  &:hover {
+    background-color: rgba(221, 221, 221, 0.3);
+  }
+}
+
+.sub-menu {
+  cursor: pointer;
+  gap: 5px;
+
+  .list-item.active a {
+    color: var(--primary);
+    font-weight: 600;
+
+    svg {
+      fill: var(--primary);
+    }
+  }
+
+  .list-item {
+    a {
+      padding: 10px 15px;
+      gap: 5px;
+      color: #6b7280;
+      font-size: 12px;
+      border-radius: 0 5px 5px 0;
+
+      svg {
+        fill: #6b7280;
+        height: 18px;
+      }
+
+      &:hover {
+        background-color: rgba(221, 221, 221, 0.3);
+      }
+    }
+  }
+}

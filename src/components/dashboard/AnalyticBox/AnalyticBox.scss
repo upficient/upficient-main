@@ -1,0 +1,35 @@
+.ana-box {
+  gap: 15px;
+  flex: 0 25%;
+  background-color: #cfceff;
+  border-radius: 15px;
+  padding: 24px 15px;
+
+  &:nth-child(even) {
+    background-color: #fae27cbf;
+  }
+
+  .icon {
+    padding: 8px 12px;
+    display: flex;
+    border-radius: 8px;
+    background: var(--white);
+
+    svg {
+      height: 30px;
+    }
+  }
+
+  .content {
+    h3 {
+      font-size: 22px;
+      line-height: 24px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 16px;
+      margin-top: 5px;
+    }
+  }
+}

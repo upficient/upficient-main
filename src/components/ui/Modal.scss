@@ -1,0 +1,28 @@
+.modalcontenttabs {
+  button {
+    flex: 0 50%;
+    border: 0;
+    padding: 12px 0;
+    background-color: #cfceff8b;
+    cursor: pointer;
+  }
+}
+.reset-button-style {
+  height: 25px;
+  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #cfceff8b;
+  border: none;
+  cursor: pointer;
+  svg {
+    height: 14px;
+  }
+}
+.color-field-wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}

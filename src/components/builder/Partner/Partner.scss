@@ -1,0 +1,25 @@
+.Efficiency {
+  padding-top: 50px;
+  background: var(--bg-purple);
+  .mainEfficiency {
+    padding: 40px;
+    background: var(--white);
+    .icon {
+      height: 100px;
+    }
+    .title {
+      padding: 20px 0px;
+    }
+    .para p {
+      color: #a2a1b1;
+    }
+    .readMore {
+      margin-top: 30px;
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .Efficiency .mainEfficiency {
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,41 @@
+.teamSec{
+    padding-top: 75px;
+    padding-bottom: 150px;
+    background: #EDECFF;
+    .teamMain{
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-top: 75px;
+        .team{
+            .empName{
+                padding-top: 20px;
+            }
+            .empDesignation p{
+                padding-top: 10px;
+                color: #a2a1b1;
+            }
+            .empText p{
+                padding: 30px 0px;
+                font-size: 16px;
+                line-height: 22px;
+            }
+        }
+    }
+    .teamMain>div{
+        flex: 0 31%;
+    }
+}
+@media screen and (max-width:767px){
+    .teamSec{
+        .teamMain>div{
+            flex: 0 48%;
+        }
+    }
+}
+@media screen and (max-width:576px){
+    .teamSec{
+        .teamMain>div{
+            flex: 0 100%;
+        }
+    }
+}

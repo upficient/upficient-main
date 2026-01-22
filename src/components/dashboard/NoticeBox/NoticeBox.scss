@@ -1,0 +1,40 @@
+.order-notice-main {
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #cfceff;
+  margin-bottom: 10px;
+
+  &:nth-child(odd) {
+    background-color: #fae27cbf;
+  }
+
+  .order-head {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--white);
+
+    .order-title {
+      h4 {
+        font-size: 16px;
+      }
+    }
+
+    .order-date {
+      background: var(--white);
+      border-radius: 5px;
+      padding: 2px 10px;
+
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .order-notes {
+    margin-top: 10px;
+
+    p {
+      font-size: 14px;
+      color: var(--primary);
+    }
+  }
+}

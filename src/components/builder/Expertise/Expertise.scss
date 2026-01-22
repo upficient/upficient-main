@@ -1,0 +1,65 @@
+.mainHead {
+  padding-top: 120px;
+  .subHead {
+    padding-bottom: 30px;
+  }
+}
+.innerExpertise {
+  padding-top: 100px;
+  .expertiseContent {
+    padding-right: 50px;
+    .title {
+      padding: 30px 0px;
+    }
+    .para p {
+      color: #a2a1b1;
+    }
+  }
+  .expertiseImg {
+    // width: 670px;
+    height: auto;
+  }
+}
+.innerExpertise:nth-child(odd) .content {
+  order: 1;
+}
+.innerExpertise:nth-child(odd) .image {
+  order: 2;
+}
+.innerExpertise:nth-child(even) .content {
+  order: 2;
+}
+.innerExpertise:nth-child(even) .image {
+  order: 1;
+}
+@media (max-width: 992px) {
+  .content,
+  .image {
+    order: 0;
+  }
+}
+@media (max-width: 767px) {
+  .innerExpertise .expertiseContent {
+    padding: 10px;
+    text-align: center;
+  }
+  .innerExpertise:nth-child(odd) .content {
+    order: 1;
+  }
+  .innerExpertise:nth-child(odd) .image {
+    order: 1;
+  }
+  .innerExpertise:nth-child(even) .content {
+    order: 1;
+  }
+  .innerExpertise:nth-child(even) .image {
+    order: 1;
+  }
+  .innerExpertise {
+    padding-top: 50px;
+    .expertiseImg {
+      height: 100%;
+      padding-top: 30px;
+    }
+  }
+}

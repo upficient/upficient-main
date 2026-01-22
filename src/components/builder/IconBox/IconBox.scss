@@ -1,0 +1,52 @@
+.iconBox {
+  padding: 100px 0px;
+  .iconBoxLists {
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-top: 80px;
+    .boxIcon {
+      gap: 30px;
+      .icon {
+        height: 100px;
+        width: 100px;
+      }
+      .iconContent {
+        width: calc(100% - 100px);
+      }
+      .text {
+        padding-top: 20px;
+        p {
+          color: #a2a1b1;
+        }
+      }
+    }
+  }
+  .iconBoxLists > div {
+    flex: 0 47%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .iconBox {
+    .iconBoxLists > div {
+      flex: 0 100%;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .iconBox {
+    padding: 50px 0px;
+  }
+}
+@media screen and (max-width: 567px) {
+  .boxIcon {
+    flex-direction: column;
+    .iconContent,
+    .icon {
+      width: 100%;
+      text-align: center;
+      img {
+        width: fit-content !important;
+      }
+    }
+  }
+}
