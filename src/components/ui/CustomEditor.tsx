@@ -1,3 +1,4 @@
+"use client";
 import { Editor } from "@tinymce/tinymce-react";
 import * as _ from "lodash";
 import React, { useRef, useState } from "react";
