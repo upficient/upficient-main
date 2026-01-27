@@ -78,7 +78,7 @@ const Header = () => {
     { name: "Case Studies", href: "/case-study" },
     {
       name: "Guides",
-      href: "/guides",
+      href: "/clickup-guides",
       hasMegaMenu: true,
       megaMenu: {
         columns: [
@@ -100,7 +100,7 @@ const Header = () => {
             title: "More guides",
             description:
               "Learn more about ClickUp, from software comparisons to ClickUp features",
-            href: "/guides",
+            href: "/clickup-guides",
           },
         ],
         outcomes: [
