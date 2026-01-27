@@ -8,6 +8,7 @@ const BlogCard: React.FC<{ data: any }> = ({ data }) => {
   const {
     imageSrc,
     imageAlt,
+    tagText,
     title,
     authorName,
     date,
@@ -53,7 +54,7 @@ const BlogCard: React.FC<{ data: any }> = ({ data }) => {
 
         {/* Content */}
         <div className="card-content">
-          <span className="badge">Resource</span>
+          <span className="badge">{tagText || "Resource"}</span>
 
           {/* Title */}
           <h1
@@ -118,6 +119,7 @@ export const meta = {
   fields: [
     { key: "imageSrc", label: "Image Source", type: "file" },
     { key: "imageAlt", label: "Alt Text", type: "text" },
+    { key: "tagText", label: "Tag Text", type: "text" },
     { key: "title", label: "Title", type: "text" },
     { key: "authorName", label: "Author Name", type: "text" },
     { key: "date", label: "Date", type: "text" },
