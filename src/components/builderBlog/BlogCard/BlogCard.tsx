@@ -37,9 +37,9 @@ const BlogCard: React.FC<{ data: any }> = ({ data }) => {
       }}
     >
       {/* Back link */}
-      <link href="/clickup-guides" className="back-link">
+      <Link href="/clickup-guides" className="back-link">
         <i className="fa-solid fa-arrow-left"></i> Back to Guides
-      </link>
+      </Link>
 
       <div className="card-container">
         {/* Image */}
