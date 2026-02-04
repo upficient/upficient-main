@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { getImagePath } from "@/services/common.service";
 import Image from "next/image";
 import "./NewGuide.scss";
@@ -11,10 +14,42 @@ interface Guides {
 
 const NewGuide: React.FC<{ data: any }> = ({ data }) => {
   const { guides = [] } = data;
-  const styles = data.styles || {}; // Safely default `styles` to an empty object
+  const styles = data.styles || {};
 
-  // Filter out guides without a title for TOC
+  // Filter out guides without title (for TOC)
   const tocGuides = guides.filter((guide: Guides) => guide.title?.trim());
+
+  // Active TOC index
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  // Scroll spy
+  useEffect(() => {
+    const sections = document.querySelectorAll(".guidesection");
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            if (!id) return;
+
+            const index = Number(id.replace("guidesection-", ""));
+            setActiveIndex(index);
+          }
+        });
+      },
+      {
+        rootMargin: "-40% 0px -50% 0px",
+        threshold: 0,
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
@@ -37,13 +72,16 @@ const NewGuide: React.FC<{ data: any }> = ({ data }) => {
         <aside className="toc sticky-top">
           <h5>Table of Contents</h5>
           <ul>
-            {tocGuides && tocGuides.length > 0 ? (
+            {tocGuides.length > 0 ? (
               tocGuides.map((guide: Guides, index: number) => (
-                <li key={index}>
+                <li
+                  key={index}
+                  className={activeIndex === index ? "active" : ""}
+                >
                   <a href={`#guidesection-${index}`}>
                     <div className="list-icon">
                       <GuideArrow />
-                    </div>{" "}
+                    </div>
                     <div className="list-title">{guide.title}</div>
                   </a>
                 </li>
@@ -56,13 +94,15 @@ const NewGuide: React.FC<{ data: any }> = ({ data }) => {
 
         {/* Main Content */}
         <div className="main-content">
-          {guides && guides.length > 0 ? (
+          {guides.length > 0 ? (
             (() => {
-              let tocIndex = 0; // Counter for guides with titles
+              let tocIndex = 0;
+
               return guides.map((guide: Guides, index: number) => {
                 const hasTitle = guide.title?.trim();
                 const id = hasTitle ? `guidesection-${tocIndex}` : undefined;
-                if (hasTitle) tocIndex++; // Increment only if title exists
+
+                if (hasTitle) tocIndex++;
 
                 return (
                   <div
@@ -72,9 +112,11 @@ const NewGuide: React.FC<{ data: any }> = ({ data }) => {
                     style={{ scrollMarginTop: "88px" }}
                   >
                     {guide.title && <h2>{guide.title}</h2>}
+
                     {guide.text && (
                       <div dangerouslySetInnerHTML={{ __html: guide.text }} />
                     )}
+
                     {guide.image && (
                       <Image
                         src={getImagePath("bgsec1img.webp", guide.image)}

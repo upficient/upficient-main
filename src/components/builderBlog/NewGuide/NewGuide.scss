@@ -39,7 +39,9 @@ section.content-sectiontoc.d-flex {
 .toc ul li {
   margin-bottom: 10px;
 }
-
+.toc ul li.active a {
+  color: #a163ff;
+}
 .toc ul li a {
   text-decoration: none;
   color: var(--text);
