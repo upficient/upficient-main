@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: any) {
       },
       robots: { index: "yes", follow: "yes" },
       alternates: {
-        canonical: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/${page.fields?.slug}`,
+        canonical: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/clickup-guides/${page.fields?.slug}`,
       },
       verification: {
         google: "7A3fj-UIPzZxjzvRAJl21qHD81T2RZekt1LgbG8oR9U",
@@ -75,7 +75,7 @@ const DynamicComponents = async ({ params }: any) => {
             `@/components/${
               page.componentType === "page" ? "builder" : "builderBlog"
             }/${componentName}/${componentName}`
-          ).then((mod) => mod.default)
+          ).then((mod) => mod.default),
         );
         return <DynamicComponent key={id} {...{ data: props }} />;
       })}

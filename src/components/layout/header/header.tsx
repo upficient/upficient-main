@@ -87,7 +87,7 @@ const Header = () => {
             title: "ClickUp in 2025: The Ultimate Guide",
             description:
               "Everything you need to know about ClickUp before diving in",
-            href: "/clickup-guides/clickup-in-2024-the-ultimate-guide",
+            href: "/clickup-guides/clickup-in-2025-the-ultimate-guide",
           },
           {
             icon: "Optimization-Icon.png",
