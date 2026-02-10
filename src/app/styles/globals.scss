@@ -161,12 +161,12 @@ p {
   .servicesBox {
     .title {
       h4 {
-        color: var(--white);
+        color: var(--white) !important;
       }
     }
     .para {
       p {
-        color: var(--white);
+        color: var(--white) !important;
       }
     }
   }
@@ -175,12 +175,12 @@ p {
   .servicesBox {
     .title {
       h4 {
-        color: #9864ff;
+        color: #9864ff !important;
       }
     }
     .para {
       p {
-        color: #9864ff;
+        color: #9864ff !important;
       }
     }
   }
