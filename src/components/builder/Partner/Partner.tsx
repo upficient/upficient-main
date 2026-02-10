@@ -32,7 +32,7 @@ const Partner: React.FC<{ data: any }> = ({ data }) => {
     <>
       {/* Main Heading Section */}
       <section
-        className="mainHead bg-purple"
+        className="partner-main-wrapper"
         style={{
           padding: `${padding.top || 0}px ${padding.right || 0}px 40px ${
             padding.left || 0
@@ -43,69 +43,74 @@ const Partner: React.FC<{ data: any }> = ({ data }) => {
           borderRadius: `${borderRadius.top || 0}px ${
             borderRadius.right || 0
           }px 0px 0px`,
-          backgroundColor: styles.backgroundColor || undefined,
+          background:
+            "linear-gradient(359.91deg, #E6E2FF 0.09%, #FFFFFF 75.75%)",
         }}
       >
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="heading text-center">
-                <h2
-                  style={{
-                    color: styles.headingColor || undefined,
-                  }}
-                >
-                  {mainHeading.trim()}
-                </h2>
+        <section className="mainHead bg-purple">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="heading text-center">
+                  <h2
+                    style={{
+                      color: styles.headingColor || undefined,
+                    }}
+                  >
+                    {mainHeading.trim()}
+                  </h2>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Partner Boxes Section */}
-      <section
-        className="Efficiency"
-        style={{
-          padding: `0px ${padding.right || 0}px ${
-            padding.bottom || 0
-          }px ${padding.left || 0}px`,
-          margin: `0px ${margin.right || 0}px ${
-            margin.bottom || 0
-          }px ${margin.left || 0}px`,
-          borderRadius: `0px 0px ${borderRadius.left || 0}px ${
-            borderRadius.bottom || 0
-          }px`,
-          backgroundColor: styles.backgroundColor || undefined,
-        }}
-      >
-        <div className="container">
-          <div className="row">
-            {partnerboxes.length > 0 ? (
-              partnerboxes.map((box: any, index: number) => (
-                <PartnerBox
-                  key={index}
-                  imageSrc={box.imageSrc || ""}
-                  imageAlt={box.imageAlt || "Default Alt Text"}
-                  title={box.title.trim() || "Default Title"}
-                  description={box.description.trim() || "Default Description"}
-                  link={box.link || "#"}
-                  linkText={box.linkText.trim() || "Learn More"}
-                  boxbackgroundColor={styles.boxbackgroundColor}
-                  boxShadow={styles.boxShadow}
-                  headingColor={styles.headingColor}
-                  textColor={styles.textColor}
-                  buttonColor={styles.buttonColor}
-                  buttonTextColor={styles.buttonTextColor}
-                />
-              ))
-            ) : (
-              <div className="col-lg-12 text-center">
-                <p>No partners available at the moment.</p>
-              </div>
-            )}
+        {/* Partner Boxes Section */}
+        <section
+          className="Efficiency"
+          style={{
+            padding: `0px ${padding.right || 0}px ${
+              padding.bottom || 0
+            }px ${padding.left || 0}px`,
+            margin: `0px ${margin.right || 0}px ${
+              margin.bottom || 0
+            }px ${margin.left || 0}px`,
+            borderRadius: `0px 0px ${borderRadius.left || 0}px ${
+              borderRadius.bottom || 0
+            }px`,
+            backgroundColor: styles.backgroundColor || undefined,
+          }}
+        >
+          <div className="container">
+            <div className="row">
+              {partnerboxes.length > 0 ? (
+                partnerboxes.map((box: any, index: number) => (
+                  <PartnerBox
+                    key={index}
+                    imageSrc={box.imageSrc || ""}
+                    imageAlt={box.imageAlt || "Default Alt Text"}
+                    title={box.title.trim() || "Default Title"}
+                    description={
+                      box.description.trim() || "Default Description"
+                    }
+                    link={box.link || "#"}
+                    linkText={box.linkText.trim() || "Learn More"}
+                    boxbackgroundColor={styles.boxbackgroundColor}
+                    boxShadow={styles.boxShadow}
+                    headingColor={styles.headingColor}
+                    textColor={styles.textColor}
+                    buttonColor={styles.buttonColor}
+                    buttonTextColor={styles.buttonTextColor}
+                  />
+                ))
+              ) : (
+                <div className="col-lg-12 text-center">
+                  <p>No partners available at the moment.</p>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        </section>
       </section>
     </>
   );
