@@ -32,7 +32,7 @@ const ServiceBox: React.FC<ServiceBoxProps> = ({
   textColor,
 }) => {
   return (
-    <div className="col-lg-4 col-md-6">
+    <div className="col-lg-4 col-md-6 servicesBoxmain">
       <div
         className="servicesBox text-center"
         style={{ background: boxbackgroundColor }}

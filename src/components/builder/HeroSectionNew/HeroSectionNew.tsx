@@ -2,9 +2,9 @@ import { getImagePath } from "@/services/common.service";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import "./HeroSection.scss";
+import "./HeroSectionNew.scss";
 
-const HeroSection: React.FC<{ data: any }> = ({ data }) => {
+const HeroSectionNew: React.FC<{ data: any }> = ({ data }) => {
   const styles = data?.styles || {}; // Default to an empty object if styles is undefined
   const padding = styles.padding || {};
   const margin = styles.margin || {};
@@ -14,7 +14,7 @@ const HeroSection: React.FC<{ data: any }> = ({ data }) => {
   return (
     <section
       {...(data?.sectionid?.trim() && { id: data.sectionid.trim() })}
-      className="heroSection d-flex align-items-center position-relative"
+      className="HeroSectionNew d-flex align-items-center position-relative"
       style={{
         position: "relative",
         padding: `${padding.top}px ${padding.right}px ${padding.bottom}px ${padding.left}px`,
@@ -32,34 +32,7 @@ const HeroSection: React.FC<{ data: any }> = ({ data }) => {
           height={500}
         />
       )}
-      {data?.backgroundImage && (
-        <Image
-          src={getImagePath("hero_bg.webp", data.backgroundImage)}
-          alt="Background"
-          layout="fill"
-          objectFit={styles.bgsize || "cover"}
-          objectPosition={(() => {
-            switch (styles.bgposition) {
-              case "topright":
-                return "top right";
-              case "topcenter":
-                return "top center";
-              case "bottomcenter":
-                return "bottom center";
-              case "bgcenter":
-                return "center";
-              case "top":
-              default:
-                return "top";
-            }
-          })()}
-          className="heroBackground"
-          priority
-          fetchPriority="high"
-          quality={100}
-        />
-      )}
-      <div className="container position-relative" style={{ zIndex: 2 }}>
+      <div className="container-fluid position-relative" style={{ zIndex: 2 }}>
         <div className="row align-items-center">
           <div className="col-lg-6 col-md-6">
             <div className="heroContent">
@@ -103,14 +76,14 @@ const HeroSection: React.FC<{ data: any }> = ({ data }) => {
               )}
             </div>
           </div>
-          <div className="col-lg-6 col-md-6">
+          <div className="col-lg-6 col-md-6 hero-img-parent">
             {data?.image && (
               <div className="heroImg">
                 <Image
                   src={getImagePath("hero_front.webp", data.image)}
                   alt="banner image"
-                  width={800}
-                  height={600}
+                  width={1400}
+                  height={1400}
                   className="img-contain"
                   priority
                 />
@@ -125,12 +98,11 @@ const HeroSection: React.FC<{ data: any }> = ({ data }) => {
 
 // Metadata for editing
 export const meta = {
-  name: "HeroSection",
+  name: "HeroSectionNew",
   fields: [
     { key: "heading", label: "Heading", type: "text" },
     { key: "description", label: "Description", type: "textarea" },
     { key: "BadgeImage", label: "Badge Image", type: "file" },
-    { key: "backgroundImage", label: "Background Image URL", type: "file" },
     { key: "image", label: "Hero Image URL", type: "file" },
     { key: "buttonText", label: "Button Text", type: "text" },
     { key: "buttonLink", label: "Button Link", type: "text" },
@@ -168,27 +140,6 @@ export const meta = {
         { key: "right", label: "Right", type: "number" },
         { key: "bottom", label: "Bottom", type: "number" },
         { key: "left", label: "Left", type: "number" },
-      ],
-    },
-    {
-      key: "bgsize",
-      label: "Background Size",
-      type: "radioOptions",
-      fields: [
-        { key: "cover", label: "Cover", type: "radio" },
-        { key: "contain", label: "Contain", type: "radio" },
-      ],
-    },
-    {
-      key: "bgposition",
-      label: "Background Position",
-      type: "radioOptions",
-      fields: [
-        { key: "top", label: "Top", type: "radio" },
-        { key: "topright", label: "Top Right", type: "radio" },
-        { key: "topcenter", label: "Top Center", type: "radio" },
-        { key: "bgcenter", label: "Center", type: "radio" },
-        { key: "bottomcenter", label: "Bottom Center", type: "radio" },
       ],
     },
     {
@@ -241,4 +192,4 @@ export const meta = {
   ],
 };
 
-export default HeroSection;
+export default HeroSectionNew;

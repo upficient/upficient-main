@@ -1,0 +1,23 @@
+.logo-slide img {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+}
+.logo-slide img:hover {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+section.logo-slider {
+  padding: 100px 0;
+  text-align: center;
+  margin-top: -90px;
+  background: #fff;
+  position: relative;
+  border-radius: 100px 0 0 0;
+}
+.logo-slider-inner h2 {
+  margin-bottom: 60px;
+  font-size: 36px;
+  font-weight: 400;
+  color: #402e63;
+}

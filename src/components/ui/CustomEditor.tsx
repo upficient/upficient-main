@@ -23,7 +23,7 @@ const CustomEditor: React.FC<CustomEditorProps> = ({ value, onChange }) => {
 
   return (
     <Editor
-      apiKey="einpz4pgbjx1yhnarb5zxjo574l9szqjvqp8pad7me2pejfo"
+      apiKey="ewkwqzmrkpofebp8e2ipzoq4b58cjq3oq5wdopukd24fo0w5"
       init={{
         plugins: [
           "anchor",

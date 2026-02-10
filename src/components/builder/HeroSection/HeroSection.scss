@@ -6,6 +6,15 @@
   min-height: 574px;
   padding: 100px 0px;
   overflow: hidden;
+  img.BadgeImage {
+    position: absolute;
+    z-index: 12;
+    top: 25px;
+    right: 34px;
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+  }
   .heroContent {
     p {
       font-size: 22px;

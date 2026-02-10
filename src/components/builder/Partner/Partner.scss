@@ -3,7 +3,6 @@
   background: var(--bg-purple);
   .mainEfficiency {
     padding: 40px;
-    background: var(--white);
     .icon {
       height: 100px;
     }
@@ -11,10 +10,16 @@
       padding: 20px 0px;
     }
     .para p {
-      color: #a2a1b1;
+      font-size: 16px;
+      color: var(--primary);
     }
     .readMore {
       margin-top: 30px;
+      a {
+        background: var(--secondary);
+        color: var(--white);
+        font-size: 16px;
+      }
     }
   }
 }
