@@ -56,32 +56,34 @@ const Home = async () => {
 
   return (
     <>
-      {/* {Object.entries(components).map(([key, props]) => {
+      <div id="page-home" className="page-wrapper">
+        {/* {Object.entries(components).map(([key, props]) => {
         const componentName = key.split("_")[0];
         const DynamicComponent = dynamic(() =>
           import(`@/components/builder/${componentName}/${componentName}`).then(
             (mod) => mod.default
           )
         ); */}
-      {jsonLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      )}
+        {jsonLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+        )}
 
-      {sortedComponents.map(({ id, ...props }) => {
-        const componentName = id.split("_")[0];
-        const DynamicComponent = dynamic(() =>
-          import(
-            `@/components/${
-              page.componentType === "page" ? "builder" : "builderBlog"
-            }/${componentName}/${componentName}`
-          ).then((mod) => mod.default)
-        );
-        return <DynamicComponent key={id} {...{ data: props }} />;
-        // add commen
-      })}
+        {sortedComponents.map(({ id, ...props }) => {
+          const componentName = id.split("_")[0];
+          const DynamicComponent = dynamic(() =>
+            import(
+              `@/components/${
+                page.componentType === "page" ? "builder" : "builderBlog"
+              }/${componentName}/${componentName}`
+            ).then((mod) => mod.default),
+          );
+          return <DynamicComponent key={id} {...{ data: props }} />;
+          // add commen
+        })}
+      </div>
     </>
   );
 };

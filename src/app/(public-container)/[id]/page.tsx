@@ -61,26 +61,31 @@ const DynamicComponents = async ({ params }: any) => {
     .sort((a, b) => a.order - b.order);
 
   const jsonLd = { ...JSON.parse(page.fields?.schema || "{}") };
+  const pageId = `page-${(page.fields?.slug || currPath)
+    .toLowerCase()
+    .replace(/[^a-z0-9-_]/g, "-")}`;
 
   return (
     <>
-      {jsonLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      )}
-      {sortedComponents.map(({ id, ...props }) => {
-        const componentName = id.split("_")[0];
-        const DynamicComponent = dynamic(() =>
-          import(
-            `@/components/${
-              page.componentType === "page" ? "builder" : "builderBlog"
-            }/${componentName}/${componentName}`
-          ).then((mod) => mod.default)
-        );
-        return <DynamicComponent key={id} {...{ data: props }} />;
-      })}
+      <div id={pageId} className="page-wrapper">
+        {jsonLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+        )}
+        {sortedComponents.map(({ id, ...props }) => {
+          const componentName = id.split("_")[0];
+          const DynamicComponent = dynamic(() =>
+            import(
+              `@/components/${
+                page.componentType === "page" ? "builder" : "builderBlog"
+              }/${componentName}/${componentName}`
+            ).then((mod) => mod.default),
+          );
+          return <DynamicComponent key={id} {...{ data: props }} />;
+        })}
+      </div>
     </>
   );
 };

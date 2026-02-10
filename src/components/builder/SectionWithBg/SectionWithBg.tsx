@@ -59,6 +59,7 @@ const SectionWithBg: React.FC<{ data: any }> = ({ data }) => {
             }px`
           : undefined,
         backgroundColor: styles.backgroundColor || undefined,
+        position: "relative",
       }}
     >
       <div className="container">

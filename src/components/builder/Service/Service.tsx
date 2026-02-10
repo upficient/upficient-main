@@ -9,6 +9,7 @@ interface ServiceBoxProps {
   imageAlt: string;
   link: string;
   linkText: string;
+  boxbackgroundColor?: string;
 }
 
 interface ServiceProps {
@@ -104,7 +105,7 @@ const Service: React.FC<{ data: any }> = ({ data }) => {
                   }
                   link={box.link?.trim() || "#"}
                   linkText={box.linkText?.trim() || "Read More"}
-                  boxbackgroundColor={styles.boxbackgroundColor || undefined}
+                  boxbackgroundColor={box.boxbackgroundColor || undefined}
                   boxHeadingColor={styles.boxHeadingColor || undefined}
                   buttonColor={styles.buttonColor || undefined}
                   buttonTextColor={styles.buttonTextColor || undefined}
@@ -137,6 +138,11 @@ export const meta = {
         { key: "imageAlt", label: "Image Alt Text", type: "text" },
         { key: "link", label: "Link", type: "url" },
         { key: "linkText", label: "Link Text", type: "text" },
+        {
+          key: "boxbackgroundColor",
+          label: "Box Background Color",
+          type: "color",
+        },
       ],
     },
   ],

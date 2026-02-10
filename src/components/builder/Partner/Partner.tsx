@@ -34,10 +34,10 @@ const Partner: React.FC<{ data: any }> = ({ data }) => {
       <section
         className="partner-main-wrapper"
         style={{
-          padding: `${padding.top || 0}px ${padding.right || 0}px 40px ${
+          padding: `${padding.top || 0}px ${padding.right || 0}px ${padding.bottom || 0}px ${
             padding.left || 0
           }px`,
-          margin: `${margin.top || 0}px ${margin.right || 0}px 0px ${
+          margin: `${margin.top || 0}px ${margin.right || 0}px ${margin.bottom || 0}px ${
             margin.left || 0
           }px`,
           borderRadius: `${borderRadius.top || 0}px ${
@@ -47,7 +47,12 @@ const Partner: React.FC<{ data: any }> = ({ data }) => {
             "linear-gradient(359.91deg, #E6E2FF 0.09%, #FFFFFF 75.75%)",
         }}
       >
-        <section className="mainHead bg-purple">
+        <section
+          className="mainHead"
+          style={{
+            paddingBottom: "40px",
+          }}
+        >
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
