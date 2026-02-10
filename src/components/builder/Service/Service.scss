@@ -3,34 +3,6 @@
   padding-bottom: 300px;
   background: var(--bg-purple);
   .servicesBoxmain {
-    &::nth-child(2n) {
-      .servicesBox {
-        .title {
-          h4 {
-            color: var(--white);
-          }
-        }
-        .para {
-          p {
-            color: var(--white);
-          }
-        }
-      }
-    }
-    &::nth-child(3n) {
-      .servicesBox {
-        .title {
-          h4 {
-            color: #9864ff;
-          }
-        }
-        .para {
-          p {
-            color: #9864ff;
-          }
-        }
-      }
-    }
     .servicesBox {
       .title {
         h4 {

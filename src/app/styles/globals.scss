@@ -156,3 +156,32 @@ p {
   cursor: pointer;
   border-radius: 5px;
 }
+
+.servicesBoxmain::nth-child(2n) {
+  .servicesBox {
+    .title {
+      h4 {
+        color: var(--white);
+      }
+    }
+    .para {
+      p {
+        color: var(--white);
+      }
+    }
+  }
+}
+.servicesBoxmain::nth-child(3n) {
+  .servicesBox {
+    .title {
+      h4 {
+        color: #9864ff;
+      }
+    }
+    .para {
+      p {
+        color: #9864ff;
+      }
+    }
+  }
+}

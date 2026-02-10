@@ -51,6 +51,7 @@ const Service: React.FC<{ data: any }> = ({ data }) => {
               }px 0px 0px`
             : undefined,
           backgroundColor: styles.backgroundColor || undefined,
+          position: "relative",
         }}
       >
         <div className="container">

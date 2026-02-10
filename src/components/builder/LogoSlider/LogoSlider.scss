@@ -16,8 +16,15 @@ section.logo-slider {
   border-radius: 100px 0 0 0;
 }
 .logo-slider-inner h2 {
-  margin-bottom: 60px;
+  margin-bottom: 36px;
   font-size: 36px;
   font-weight: 400;
   color: #402e63;
+}
+.logo-slide img {
+  height: 100px;
+  object-fit: contain;
+}
+.logo-slider-inner .logo-swiper {
+  margin-bottom: 60px;
 }
