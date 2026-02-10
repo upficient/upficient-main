@@ -72,10 +72,10 @@ p {
 
 .subHead {
   p {
-    font-size: 12px;
+    font-size: 12px !important;
     line-height: 18px;
     font-weight: 500;
-    color: var(--secondary);
+    color: var(--secondary) !important;
     background: #f7f3ff;
     border-radius: 50px;
     padding: 8px 15px;

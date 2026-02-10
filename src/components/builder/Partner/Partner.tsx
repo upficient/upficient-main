@@ -21,6 +21,12 @@ interface ExpertiseProps {
 const Partner: React.FC<{ data: any }> = ({ data }) => {
   const { mainHeading = "Default Heading", partnerboxes = [] } = data;
   const styles = data.styles || {}; // Safely default `styles` to an empty object
+  const {
+    padding = {},
+    margin = {},
+    borderRadius = {},
+    backgroundColor,
+  } = styles;
 
   return (
     <>
@@ -28,21 +34,15 @@ const Partner: React.FC<{ data: any }> = ({ data }) => {
       <section
         className="mainHead bg-purple"
         style={{
-          padding: styles.padding
-            ? `${styles.padding.top || 0}px ${
-                styles.padding.right || 0
-              }px 0px ${styles.padding.left || 0}px`
-            : undefined,
-          margin: styles.margin
-            ? `${styles.margin.top || 0}px ${styles.margin.right || 0}px 0px ${
-                styles.margin.left || 0
-              }px`
-            : undefined,
-          borderRadius: styles.borderRadius
-            ? `${styles.borderRadius.top || 0}px ${
-                styles.borderRadius.right || 0
-              }px 0px 0px`
-            : undefined,
+          padding: `${padding.top || 0}px ${padding.right || 0}px 0px ${
+            padding.left || 0
+          }px`,
+          margin: `${margin.top || 0}px ${margin.right || 0}px 0px ${
+            margin.left || 0
+          }px`,
+          borderRadius: `${borderRadius.top || 0}px ${
+            borderRadius.right || 0
+          }px 0px 0px`,
           backgroundColor: styles.backgroundColor || undefined,
         }}
       >
@@ -67,21 +67,15 @@ const Partner: React.FC<{ data: any }> = ({ data }) => {
       <section
         className="Efficiency"
         style={{
-          padding: styles.padding
-            ? `0px ${styles.padding.right || 0}px ${
-                styles.padding.bottom || 0
-              }px ${styles.padding.left || 0}px`
-            : undefined,
-          margin: styles.margin
-            ? `0px ${styles.margin.right || 0}px ${
-                styles.padding.bottom || 0
-              }px ${styles.margin.left || 0}px`
-            : undefined,
-          borderRadius: styles.borderRadius
-            ? `0px 0px ${styles.borderRadius.left || 0}px ${
-                styles.borderRadius.bottom || 0
-              }px`
-            : undefined,
+          padding: `0px ${padding.right || 0}px ${
+            padding.bottom || 0
+          }px ${padding.left || 0}px`,
+          margin: `0px ${margin.right || 0}px ${
+            margin.bottom || 0
+          }px ${margin.left || 0}px`,
+          borderRadius: `0px 0px ${borderRadius.left || 0}px ${
+            borderRadius.bottom || 0
+          }px`,
           backgroundColor: styles.backgroundColor || undefined,
         }}
       >

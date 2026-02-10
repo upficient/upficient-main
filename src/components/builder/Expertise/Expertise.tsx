@@ -61,6 +61,7 @@ const Expertise: React.FC<{ data: any }> = ({ data }) => {
             ...(styles.backgroundColor
               ? { backgroundColor: styles.backgroundColor }
               : {}),
+            position: "relative",
           }}
         >
           <div className="container">
