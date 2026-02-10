@@ -50,7 +50,7 @@ const Service: React.FC<{ data: any }> = ({ data }) => {
                 styles.borderRadius.right || 0
               }px 0px 0px`
             : undefined,
-          backgroundColor: styles.backgroundColor || undefined,
+          backgroundColor: "#fff",
           position: "relative",
         }}
       >
@@ -89,7 +89,7 @@ const Service: React.FC<{ data: any }> = ({ data }) => {
                 styles.borderRadius.bottom || 0
               }px`
             : undefined,
-          backgroundColor: styles.backgroundColor || undefined,
+          backgroundColor: "#fff",
         }}
       >
         <div className="container">
