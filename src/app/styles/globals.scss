@@ -185,3 +185,9 @@ p {
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  div#page-home .colorbgSec {
+    padding: 70px 0 150px !important;
+  }
+}
