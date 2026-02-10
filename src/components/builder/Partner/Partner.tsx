@@ -34,7 +34,7 @@ const Partner: React.FC<{ data: any }> = ({ data }) => {
       <section
         className="mainHead bg-purple"
         style={{
-          padding: `${padding.top || 0}px ${padding.right || 0}px 0px ${
+          padding: `${padding.top || 0}px ${padding.right || 0}px 40px ${
             padding.left || 0
           }px`,
           margin: `${margin.top || 0}px ${margin.right || 0}px 0px ${
