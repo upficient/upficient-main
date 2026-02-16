@@ -186,6 +186,20 @@ p {
   }
 }
 
+// service page css
+div#page-clickup-onboarding-service {
+  section#phase4 {
+    background: linear-gradient(359.91deg, #e6e2ff 0.09%, #ffffff 75.75%);
+    padding-bottom: 100px;
+  }
+  section#phase5 {
+    margin-top: -100px;
+    background: #fff;
+    position: relative;
+    border-radius: 100px 0 0 0;
+  }
+}
+
 @media screen and (max-width: 767px) {
   div#page-home .colorbgSec {
     padding: 70px 0 150px !important;

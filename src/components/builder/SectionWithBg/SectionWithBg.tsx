@@ -36,6 +36,7 @@ const SectionWithBg: React.FC<{ data: any }> = ({ data }) => {
   const styles = data.styles || {}; // Safely default `styles` to an empty object
   return (
     <section
+      {...(data?.sectionid?.trim() && { id: data.sectionid.trim() })}
       className="colorbgSec"
       style={{
         backgroundImage: `url(${getImagePath("", bgSrc)})`,
@@ -152,6 +153,7 @@ export const meta = {
   fields: [
     { key: "bgSrc", label: "Background Image", type: "file" },
     { key: "imageSrc", label: "Image Source", type: "file" },
+    { key: "sectionId", label: "Section Id", type: "text" },
     { key: "title", label: "Title", type: "text" },
     { key: "description", label: "Description", type: "textarea" },
     { key: "buttonText", label: "Button Text", type: "text" },

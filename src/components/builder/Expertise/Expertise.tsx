@@ -118,7 +118,7 @@ const Expertise: React.FC<{ data: any }> = ({ data }) => {
                 <div className="col-lg-6 col-md-6 content">
                   <div className="expertiseContent">
                     <div className="subHead">
-                      <p>{box.subTitle.trim() || "Default Subtitle"}</p>
+                      {box?.subTitle?.trim() && <p>{box.subTitle.trim()}</p>}
                     </div>
                     <div className="title">
                       <h3

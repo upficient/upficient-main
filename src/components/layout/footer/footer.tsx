@@ -9,18 +9,54 @@ import "./footer.scss";
 import LazyMap from "@/components/miscellaneous/LazyMap/LazyMap";
 const Footer = async () => {
   const menuItems = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "/our-services/" },
+    { name: "ClickUp Onboarding", href: "/clickup-onboarding-service" },
+    { name: "Workspace Optimization", href: "/clickup-workspace-optimization" },
+    { name: "Integrations & Automation", href: "/clickup-integrations" },
+    { name: "Management & Maintenance", href: "/management-maintenance" },
+    { name: "ClickUp Consulting", href: "/clickup-consultants" },
+  ];
+  const menuItemsCompare = [
+    { name: "ClickUp vs. Asana", href: "/clickup-guides/clickup-vs-asana" },
+    {
+      name: "ClickUp vs. Monday.com",
+      href: "/clickup-guides/clickup-vs-monday",
+    },
+    { name: "ClickUp vs. Trello", href: "/clickup-guides/clickup-vs-trello" },
+    { name: "ClickUp vs. Notion", href: "/clickup-guides/clickup-vs-notion" },
+  ];
+  const menuItemsConnect = [
+    { name: "Contact Us", href: "/contact" },
+    {
+      name: "Free Consultation",
+      href: "https://calendly.com/upficient-consultation/30min-free-consultation?month=2025-01",
+    },
+  ];
+  const menuItemsLegal = [
+    { name: "Privacy Policy", href: "/clickup-templates/privacy-policy/" },
+    {
+      name: "Terms & Conditions",
+      href: "/clickup-templates/terms-conditions-of-purchase/",
+    },
+  ];
+  const menuItemsLearn = [
+    { name: "About Us", href: "/about-upficient-experts" },
+    { name: "Guides", href: "/clickup-guides" },
     { name: "Case Studies", href: "/case-study" },
-    { name: "Guides", href: "/guides" },
-    { name: "Contact", href: "/contact" },
+    {
+      name: "ClickUp in 2025: The Ultimate Guide",
+      href: "/clickup-guides/clickup-in-2025-the-ultimate-guide",
+    },
+    {
+      name: "How to Use ClickUp: Full  ClickUp Tutorial",
+      href: "/clickup-guides/how-to-use-clickup-full-clickup-tutorial",
+    },
   ];
   return (
     <>
       <footer className="footer">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
-            <div className="col-lg-5 col-md-4">
+            <div className="column column-40">
               <div className="logo">
                 <Image
                   src={getImagePath("logomain.webp")}
@@ -65,17 +101,58 @@ const Footer = async () => {
                 </Link>
               </div>
             </div>
-            <div className="col-lg-3 col-md-4">
-              <div className="footer-menu">
+            <div className="column column-20">
+              <div className="listbox">
+                <h3>Services</h3>
                 <ListItems items={menuItems} />
               </div>
             </div>
-            <div className="col-lg-4 col-md-4">
-              <div className="footerText">
-                <h4>Where are we?</h4>
+            <div className="column column-20">
+              <div className="listbox">
+                <h3>Compare</h3>
+                <ListItems items={menuItemsCompare} />
               </div>
-              <div className="map">
-                <LazyMap />
+              <div className="listbox">
+                <h3>connect</h3>
+                <ListItems items={menuItemsConnect} />
+              </div>
+              <div className="listbox">
+                <h3>LEGAL</h3>
+                <ListItems items={menuItemsLegal} />
+              </div>
+            </div>
+            <div className="column column-20">
+              <div className="listbox">
+                <h3>Learn</h3>
+                <ListItems items={menuItemsLearn} />
+              </div>
+              <div className="col text-center footerlogos">
+                <Image
+                  src={getImagePath("verified-Ambassador-v3-3.png")}
+                  width={500}
+                  height={500}
+                  alt="Picture of the author"
+                  className="img-contain"
+                  loading="lazy"
+                />
+                <Image
+                  src={getImagePath("verifieldclickup.png")}
+                  width={500}
+                  height={500}
+                  alt="Picture of the author"
+                  className="img-contain"
+                  loading="lazy"
+                />
+                <Image
+                  src={getImagePath(
+                    "certificate-wt34kk2dgmun-1753795545-1-1-1.png",
+                  )}
+                  width={500}
+                  height={500}
+                  alt="Picture of the author"
+                  className="img-contain"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
