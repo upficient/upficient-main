@@ -12,13 +12,16 @@ export default function Error({}: { error: Error; reset: () => void }) {
         <main className="page-not-found">
           <div className="error-page">
             <h1>
-              <Image
-                src={getImagePath("error.svg")}
-                width={440}
-                height={170}
-                alt="404"
-                loading="lazy"
-              />
+              <Link href={getImagePath("error.svg")}>
+                Upficient
+                <Image
+                  src={getImagePath("error.svg")}
+                  width={440}
+                  height={170}
+                  alt="404"
+                  loading="lazy"
+                />
+              </Link>
             </h1>
             <div className="content-error">
               <h5>Something Went Wrong</h5>

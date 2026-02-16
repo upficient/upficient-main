@@ -2,10 +2,12 @@
   height: auto;
   width: 100%;
   object-fit: contain;
-}
-.logo-slide img:hover {
   filter: grayscale(100%);
   opacity: 0.6;
+}
+.logo-slide img:hover {
+  filter: unset;
+  opacity: 1;
 }
 section.logo-slider {
   padding: 100px 0;

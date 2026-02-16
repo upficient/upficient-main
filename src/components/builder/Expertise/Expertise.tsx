@@ -2,6 +2,7 @@ import { getImagePath } from "@/services/common.service";
 import Image from "next/image";
 import React from "react";
 import "./Expertise.scss";
+import Link from "next/link";
 
 interface ExpertBox {
   subTitle: string;
@@ -149,14 +150,16 @@ const Expertise: React.FC<{ data: any }> = ({ data }) => {
                 {/* Image Section */}
                 <div className="col-lg-6 col-md-6 image">
                   <div className="expertiseImg">
-                    <Image
-                      src={getImagePath("expert.webp", box.imageSrc)}
-                      alt={box.imageAlt.trim() || "Default Alt Text"}
-                      width={600}
-                      height={400}
-                      className="img-contain"
-                      loading="lazy"
-                    />
+                    <Link href={getImagePath("expert.webp", box.imageSrc)}>
+                      <Image
+                        src={getImagePath("expert.webp", box.imageSrc)}
+                        alt={box.imageAlt.trim() || "Default Alt Text"}
+                        width={600}
+                        height={400}
+                        className="img-contain"
+                        loading="lazy"
+                      />
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -84,17 +84,22 @@ const SectionWithBg: React.FC<{ data: any }> = ({ data }) => {
                   : {}
               }
             >
-              <Image
-                src={getImagePath("bgsec1img.webp", data?.imageSrc)}
-                alt={title}
-                width={1100}
-                height={1100}
-                className="img-contain"
-                style={{
-                  objectPosition: styles.imagePosition || undefined,
-                }}
-                loading="lazy"
-              />
+              <Link
+                href={getImagePath("bgsec1img.webp", data?.imageSrc)}
+                target="_blank"
+              >
+                <Image
+                  src={getImagePath("bgsec1img.webp", data?.imageSrc)}
+                  alt={title}
+                  width={1100}
+                  height={1100}
+                  className="img-contain"
+                  style={{
+                    objectPosition: styles.imagePosition || undefined,
+                  }}
+                  loading="lazy"
+                />
+              </Link>
             </div>
           </div>
           <div className="col-lg-5 col-md-5">

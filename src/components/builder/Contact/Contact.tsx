@@ -2,6 +2,7 @@ import ContactForm from "@/components/miscellaneous/ContactForm/ContactForm";
 import { getImagePath } from "@/services/common.service";
 import Image from "next/image";
 import "./Contact.scss";
+import Link from "next/link";
 
 const Contact: React.FC<{ data: any }> = ({ data }) => {
   return (
@@ -11,7 +12,7 @@ const Contact: React.FC<{ data: any }> = ({ data }) => {
         style={{
           backgroundImage: `url(${getImagePath(
             "hero_bg.webp",
-            data?.backgroundImage
+            data?.backgroundImage,
           )})`,
         }}
       >
@@ -19,14 +20,16 @@ const Contact: React.FC<{ data: any }> = ({ data }) => {
           <div className="row">
             <div className="col-lg-12">
               <div className="contactImg">
-                <Image
-                  src={getImagePath("hero_front.webp", data?.image)}
-                  alt="banner image"
-                  width={800}
-                  height={600}
-                  className="img-contain"
-                  loading="lazy"
-                />
+                <Link href={getImagePath("hero_front.webp", data?.image)}>
+                  <Image
+                    src={getImagePath("hero_front.webp", data?.image)}
+                    alt="banner image"
+                    width={800}
+                    height={600}
+                    className="img-contain"
+                    loading="lazy"
+                  />
+                </Link>
               </div>
             </div>
           </div>

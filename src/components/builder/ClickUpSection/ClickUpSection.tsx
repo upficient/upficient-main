@@ -125,14 +125,16 @@ const ClickUpSection: React.FC<{ data: any }> = ({ data }) => {
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <div className="ratingImg">
-                <Image
-                  src={getImagePath("newservice.webp")}
-                  alt="banner image"
-                  width={800}
-                  height={600}
-                  className="img-contain"
-                  loading="lazy"
-                />
+                <Link href={getImagePath("newservice.webp")}>
+                  <Image
+                    src={getImagePath("newservice.webp")}
+                    alt="banner image"
+                    width={800}
+                    height={600}
+                    className="img-contain"
+                    loading="lazy"
+                  />
+                </Link>
               </div>
             </div>
           </div>

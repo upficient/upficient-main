@@ -187,6 +187,58 @@ p {
 }
 
 // service page css
+div#page-clickup-workspace-optimization {
+  section.content-with-video {
+    background: #fff !important;
+    padding-bottom: 0;
+  }
+  section#phase4 {
+    background: linear-gradient(359.91deg, #e6e2ff 0.09%, #ffffff 75.75%);
+  }
+  section#phase5 {
+    margin-top: -100px;
+    background: #fff;
+    position: relative;
+    border-radius: 100px 0 0 0;
+  }
+}
+div#page-clickup-integrations {
+  section.content-with-video {
+    background: #fff !important;
+    padding-bottom: 0;
+  }
+  section#phase4 {
+    position: relative;
+    margin-top: -100px;
+    background: #fff;
+    border-radius: 100px 0 0 0;
+  }
+}
+div#page-management-maintenance {
+  section.content-with-video {
+    background: #fff !important;
+    padding-bottom: 0;
+  }
+  #servicesColorSec {
+    .content {
+      padding: 100px 0 155px;
+    }
+  }
+  section#phase4 {
+    margin-top: -100px;
+    background: #fff;
+    position: relative;
+    border-radius: 100px 0 0 0;
+  }
+}
+div#page-clickup-consultants {
+  section.clickup {
+    position: relative;
+  }
+  section.rating {
+    display: none;
+  }
+}
 div#page-clickup-onboarding-service {
   section#phase4 {
     background: linear-gradient(359.91deg, #e6e2ff 0.09%, #ffffff 75.75%);
@@ -199,7 +251,7 @@ div#page-clickup-onboarding-service {
     border-radius: 100px 0 0 0;
   }
   section.content-with-video {
-    background: #fff;
+    background: #fff !important;
     padding-bottom: 0;
   }
   section#servicesColorSec {
@@ -208,7 +260,7 @@ div#page-clickup-onboarding-service {
       padding: 0;
     }
     .content {
-      padding: 50px 60px 290px 0px;
+      padding: 120px 60px 220px 0;
     }
     .container {
       max-width: 100%;

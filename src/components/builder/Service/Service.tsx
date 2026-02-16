@@ -58,6 +58,7 @@ const Service: React.FC<{ data: any }> = ({ data }) => {
           <div className="row">
             <div className="col-lg-12">
               <div className="subHead text-center">
+                {subTitle?.trim() && <p>{subTitle.trim()}</p>}
                 <p>{subTitle.trim() || "OUR SERVICES"}</p>
               </div>
               <div className="heading text-center">
