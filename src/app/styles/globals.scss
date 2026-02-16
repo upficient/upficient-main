@@ -198,10 +198,40 @@ div#page-clickup-onboarding-service {
     position: relative;
     border-radius: 100px 0 0 0;
   }
+  section.content-with-video {
+    background: #fff;
+    padding-bottom: 0;
+  }
+  section#servicesColorSec {
+    padding: 0;
+    .col-lg-7.col-md-7 {
+      padding: 0;
+    }
+    .content {
+      padding: 50px 60px 290px 0px;
+    }
+    .container {
+      max-width: 100%;
+    }
+    .img {
+      height: 100%;
+      margin-top: -68px;
+      img {
+        object-position: left -28px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {
   div#page-home .colorbgSec {
     padding: 70px 0 150px !important;
+  }
+  div#page-clickup-onboarding-service {
+    section#servicesColorSec {
+      .content {
+        padding: 50px 60px 102px 0px;
+      }
+    }
   }
 }
