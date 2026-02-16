@@ -57,10 +57,12 @@ const Service: React.FC<{ data: any }> = ({ data }) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <div className="subHead text-center">
-                {subTitle?.trim() && <p>{subTitle.trim()}</p>}
-                <p>{subTitle.trim() || "OUR SERVICES"}</p>
-              </div>
+              {subTitle?.trim() && (
+                <div className="subHead text-center">
+                  <p>{subTitle.trim()}</p>
+                </div>
+              )}
+
               <div className="heading text-center">
                 <h2 style={{ color: styles.headingColor || undefined }}>
                   {mainHeading.trim() || "Our Services"}
