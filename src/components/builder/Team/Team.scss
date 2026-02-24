@@ -1,41 +1,60 @@
-.teamSec{
+.teamSec {
+  padding-top: 75px;
+  padding-bottom: 150px;
+  background: #edecff;
+  .teamMain {
+    flex-wrap: wrap;
+    gap: 20px;
     padding-top: 75px;
-    padding-bottom: 150px;
-    background: #EDECFF;
-    .teamMain{
-        flex-wrap: wrap;
-        gap: 20px;
-        padding-top: 75px;
-        .team{
-            .empName{
-                padding-top: 20px;
-            }
-            .empDesignation p{
-                padding-top: 10px;
-                color: #a2a1b1;
-            }
-            .empText p{
-                padding: 30px 0px;
-                font-size: 16px;
-                line-height: 22px;
-            }
+    .team {
+      .empImage {
+        img {
+          border-radius: 15px;
         }
+      }
+      .empName {
+        padding-top: 20px;
+        h4 {
+          font-size: 20px;
+          color: #fff;
+        }
+      }
+      .empDesignation p {
+        padding-top: 10px;
+        color: #a2a1b1;
+        font-size: 16px;
+        color: #402e63;
+      }
+      .empText p {
+        padding: 30px 0px;
+        font-size: 14px;
+        line-height: 22px;
+        color: #402e63;
+      }
     }
-    .teamMain>div{
-        flex: 0 31%;
-    }
+  }
+  .teamMain > div {
+    flex: 0 calc(20% - 16px);
+  }
 }
-@media screen and (max-width:767px){
-    .teamSec{
-        .teamMain>div{
-            flex: 0 48%;
-        }
+@media screen and (max-width: 992px) {
+  .teamSec {
+    .teamMain > div {
+      flex: 0 calc(33.33% - 16px);
     }
+  }
 }
-@media screen and (max-width:576px){
-    .teamSec{
-        .teamMain>div{
-            flex: 0 100%;
-        }
+@media screen and (max-width: 767px) {
+  .teamSec {
+    .teamMain > div {
+      flex: 0 48%;
     }
+  }
+}
+@media screen and (max-width: 576px) {
+  .teamSec {
+    .teamMain > div {
+      flex: 0 100%;
+    }
+  }
 }
