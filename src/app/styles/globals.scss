@@ -349,6 +349,27 @@ div#page-clickup-onboarding-service {
   }
 }
 
+div#page-about-upficient-experts {
+  section#chrisdetailsec .heading {
+    display: none;
+  }
+  section#botomaboutsect {
+    border-radius: 0 100px 0 0;
+  }
+  section#chrisdetailsec .para h4 {
+    color: #fff;
+    line-height: 34px;
+  }
+  section#chrisdetailsec p.chrisdetails {
+    color: #402e63 !important;
+    font-weight: 600;
+    padding-bottom: 0;
+  }
+  section#chrisdetailsec p.chrisdesignation {
+    padding-top: 8px !important;
+    font-size: 17px;
+  }
+}
 @media screen and (max-width: 767px) {
   div#page-home .colorbgSec {
     padding: 70px 0 150px !important;

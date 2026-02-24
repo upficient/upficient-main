@@ -26,19 +26,19 @@ const Team: React.FC<TeamProps> = ({ data }) => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="heading text-center">
+            <div className="heading">
               <h2>{mainHeading.trim() || "Talented Team"}</h2>
             </div>
             <div className="teamMain d-flex flex-wrap justify-content-center">
               {members.length > 0 ? (
                 members.map((member: TeamMemberProps, index: number) => (
-                  <div className="team text-center" key={index}>
+                  <div className="team" key={index}>
                     <div className="empImage">
                       <Image
                         className="img-contain"
                         src={getImagePath(
                           "default-team-member.png",
-                          member.imageSrc
+                          member.imageSrc,
                         )}
                         height={800}
                         width={800}
