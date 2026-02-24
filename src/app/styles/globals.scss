@@ -368,6 +368,34 @@ div#page-about-upficient-experts {
   section#chrisdetailsec p.chrisdesignation {
     padding-top: 8px !important;
     font-size: 17px;
+    color: #402e63 !important;
+  }
+  section#passionatesection {
+    padding-bottom: 0;
+  }
+  section#passionatesection .row {
+    flex-direction: column-reverse !important;
+  }
+  section#passionatesection img.img-contain {
+    object-position: bottom;
+  }
+  section#passionatesection .col-lg-5.col-md-5 {
+    width: 100% !important;
+    flex: 100% !important;
+    max-width: 60%;
+    text-align: center;
+  }
+  section.teamSec {
+    background: #b080ff;
+  }
+  section.teamSec .heading h2 {
+    color: #fff;
+  }
+  section.teamSec .empText p {
+    padding-top: 12px !important;
+  }
+  section.teamSec .empDesignation p {
+    font-weight: 600;
   }
 }
 @media screen and (max-width: 767px) {
