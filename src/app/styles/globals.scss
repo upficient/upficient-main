@@ -199,6 +199,9 @@ div#page-clickup-workspace-optimization {
   section.content-with-video {
     background: #fff !important;
     padding-bottom: 0;
+    .categoryboxes {
+      display: none;
+    }
   }
   .expertiseContent .subHead p {
     background: transparent;
@@ -234,6 +237,9 @@ div#page-clickup-integrations {
   section.content-with-video {
     background: #fff !important;
     padding-bottom: 0;
+    .categoryboxes {
+      display: none;
+    }
   }
   section#phase4 {
     position: relative;
@@ -256,6 +262,9 @@ div#page-management-maintenance {
   section.content-with-video {
     background: #fff !important;
     padding-bottom: 0;
+    .categoryboxes {
+      display: none;
+    }
   }
   #servicesColorSec {
     .content {
@@ -286,6 +295,10 @@ div#page-clickup-consultants {
   section.rating {
     display: none;
   }
+  section.upficient-testimonial-wrapper {
+    background: linear-gradient(180deg, #a064ff 0%, #ffffff 100%);
+    background-image: none !important;
+  }
 }
 div#page-clickup-onboarding-service {
   .expertiseContent .subHead p {
@@ -311,6 +324,9 @@ div#page-clickup-onboarding-service {
   section.content-with-video {
     background: #fff !important;
     padding-bottom: 0;
+    .categoryboxes {
+      display: none;
+    }
   }
   section#servicesColorSec {
     padding: 0;
