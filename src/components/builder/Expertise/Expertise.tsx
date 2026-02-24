@@ -70,14 +70,15 @@ const Expertise: React.FC<{ data: any }> = ({ data }) => {
               <div className="col-lg-12">
                 <div className="heading text-center">
                   <h2
+                    dangerouslySetInnerHTML={{
+                      __html: mainHeading.trim() || "Our Default Heading",
+                    }}
                     style={{
                       ...(styles.headingColor
                         ? { color: styles.headingColor }
                         : {}),
                     }}
-                  >
-                    {mainHeading.trim() || "Our Default Heading"}
-                  </h2>
+                  ></h2>
                 </div>
               </div>
             </div>
@@ -131,7 +132,16 @@ const Expertise: React.FC<{ data: any }> = ({ data }) => {
                             ? { color: styles.rowheadingColor }
                             : {}),
                         }}
-                      />
+                      >
+                        {box?.titleImage && (
+                          <span className="title-icon">
+                            <img
+                              src={getImagePath(box.titleImage)}
+                              alt="icon"
+                            />
+                          </span>
+                        )}
+                      </h3>
                     </div>
                     <div
                       className="para"
@@ -191,6 +201,7 @@ export const meta = {
       fields: [
         { key: "subTitle", label: "Subtitle", type: "text" },
         { key: "title", label: "Title", type: "text" },
+        { key: "titleImage", label: "Title Image", type: "file" },
         { key: "description", label: "Description", type: "textarea" },
         { key: "imageSrc", label: "Image Source", type: "file" },
         { key: "imageAlt", label: "Image Alt Text", type: "text" },

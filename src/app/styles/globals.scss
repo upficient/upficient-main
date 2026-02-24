@@ -187,10 +187,28 @@ p {
 }
 
 // service page css
+div#page-our-services {
+  .content-with-video {
+    background: transparent;
+    .categoryboxes {
+      display: none;
+    }
+  }
+}
 div#page-clickup-workspace-optimization {
   section.content-with-video {
     background: #fff !important;
     padding-bottom: 0;
+  }
+  .expertiseContent .subHead p {
+    background: transparent;
+    padding: 0;
+    color: #a064ff !important;
+    font-weight: 600;
+    font-size: 20px !important;
+  }
+  .expertiseContent .title {
+    padding-top: 5px !important;
   }
   section#phase4 {
     background: linear-gradient(359.91deg, #e6e2ff 0.09%, #ffffff 75.75%);
@@ -203,6 +221,16 @@ div#page-clickup-workspace-optimization {
   }
 }
 div#page-clickup-integrations {
+  .expertiseContent .subHead p {
+    background: transparent;
+    padding: 0;
+    color: #a064ff !important;
+    font-weight: 600;
+    font-size: 20px !important;
+  }
+  .expertiseContent .title {
+    padding-top: 5px !important;
+  }
   section.content-with-video {
     background: #fff !important;
     padding-bottom: 0;
@@ -215,6 +243,16 @@ div#page-clickup-integrations {
   }
 }
 div#page-management-maintenance {
+  .expertiseContent .subHead p {
+    background: transparent;
+    padding: 0;
+    color: #a064ff !important;
+    font-weight: 600;
+    font-size: 20px !important;
+  }
+  .expertiseContent .title {
+    padding-top: 5px !important;
+  }
   section.content-with-video {
     background: #fff !important;
     padding-bottom: 0;
@@ -232,6 +270,16 @@ div#page-management-maintenance {
   }
 }
 div#page-clickup-consultants {
+  .expertiseContent .subHead p {
+    background: transparent;
+    padding: 0;
+    color: #a064ff !important;
+    font-weight: 600;
+    font-size: 20px !important;
+  }
+  .expertiseContent .title {
+    padding-top: 5px !important;
+  }
   section.clickup {
     position: relative;
   }
@@ -240,6 +288,16 @@ div#page-clickup-consultants {
   }
 }
 div#page-clickup-onboarding-service {
+  .expertiseContent .subHead p {
+    background: transparent;
+    padding: 0;
+    color: #a064ff !important;
+    font-weight: 600;
+    font-size: 20px !important;
+  }
+  .expertiseContent .title {
+    padding-top: 5px !important;
+  }
   section#phase4 {
     background: linear-gradient(359.91deg, #e6e2ff 0.09%, #ffffff 75.75%);
     padding-bottom: 100px;
