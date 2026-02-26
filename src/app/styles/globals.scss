@@ -222,6 +222,9 @@ div#page-clickup-workspace-optimization {
     position: relative;
     border-radius: 100px 0 0 0;
   }
+  section#servicebottomsec {
+    z-index: 9;
+  }
 }
 div#page-clickup-integrations {
   .expertiseContent .subHead p {
@@ -246,6 +249,9 @@ div#page-clickup-integrations {
     margin-top: -100px;
     background: #fff;
     border-radius: 100px 0 0 0;
+  }
+  section#servicebottomsec {
+    z-index: 9;
   }
 }
 div#page-management-maintenance {
@@ -276,6 +282,9 @@ div#page-management-maintenance {
     background: #fff;
     position: relative;
     border-radius: 100px 0 0 0;
+  }
+  section#servicebottomsec {
+    z-index: 9;
   }
 }
 div#page-clickup-consultants {
@@ -358,6 +367,9 @@ div#page-clickup-onboarding-service {
         object-position: left -28px;
       }
     }
+  }
+  section#servicebottomsec {
+    z-index: 9;
   }
 }
 
