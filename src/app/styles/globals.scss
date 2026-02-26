@@ -298,7 +298,10 @@ div#page-clickup-consultants {
   section.upficient-testimonial-wrapper {
     background: linear-gradient(180deg, #a064ff 0%, #ffffff 100%) !important;
     padding-top: 180px;
-
+    &::before {
+      opacity: 1;
+      width: 75%;
+    }
     .testimonialhead h2 {
       color: #402e63;
     }
