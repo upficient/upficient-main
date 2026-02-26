@@ -14,8 +14,8 @@ export const getImagePath = (defaultImage: string, image?: string): string => {
   if (image && image.trim() !== "") {
     return image.startsWith("/")
       ? image.trim()
-      : `/assets/components/${image.trim()}`;
+      : `public/assets/components/${image.trim()}`;
   }
 
-  return `/assets/img/${defaultImage}`;
+  return `public/assets/img/${defaultImage}`;
 };
