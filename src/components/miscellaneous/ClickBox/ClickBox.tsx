@@ -31,6 +31,7 @@ const ClickBox: React.FC<ClickBoxProps> = ({
           height={600}
           className="img-contain"
           loading="lazy"
+          unoptimized
         />
       </div>
       <div className="title">

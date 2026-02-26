@@ -37,6 +37,7 @@ const ImageSlide: React.FC<ImageSliderProps> = ({ images, itemsPerRow }) => {
               height={1000}
               className="img-contain"
               loading="lazy"
+              unoptimized
             />
           </SwiperSlide>
         ))}

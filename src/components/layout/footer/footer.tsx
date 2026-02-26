@@ -65,6 +65,7 @@ const Footer = async () => {
                   alt="Picture of the author"
                   className="img-contain"
                   loading="lazy"
+                  unoptimized
                 />
               </div>
               <div className="para">
@@ -134,6 +135,7 @@ const Footer = async () => {
                   alt="Picture of the author"
                   className="img-contain"
                   loading="lazy"
+                  unoptimized
                 />
                 <Image
                   src={getImagePath("verifieldclickup.png")}
@@ -142,6 +144,7 @@ const Footer = async () => {
                   alt="Picture of the author"
                   className="img-contain"
                   loading="lazy"
+                  unoptimized
                 />
                 <Image
                   src={getImagePath(
@@ -152,6 +155,7 @@ const Footer = async () => {
                   alt="Picture of the author"
                   className="img-contain"
                   loading="lazy"
+                  unoptimized
                 />
               </div>
             </div>

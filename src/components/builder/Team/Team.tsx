@@ -44,6 +44,7 @@ const Team: React.FC<TeamProps> = ({ data }) => {
                         width={800}
                         alt={member.imageAlt?.trim() || "Team member image"}
                         loading="lazy"
+                        unoptimized
                       />
                     </div>
                     <div className="empName">

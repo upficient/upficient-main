@@ -98,6 +98,7 @@ const SectionWithBg: React.FC<{ data: any }> = ({ data }) => {
                     objectPosition: styles.imagePosition || undefined,
                   }}
                   loading="lazy"
+                  unoptimized
                 />
               </Link>
             </div>

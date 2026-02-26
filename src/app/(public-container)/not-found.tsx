@@ -18,6 +18,7 @@ export default async function NotFound() {
               alt="404"
               loading="lazy"
               className="pageimga"
+              unoptimized
             />
           </Link>
         </div>

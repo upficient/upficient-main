@@ -48,6 +48,7 @@ const PartnerBox: React.FC<PartnerBoxProps> = ({
             height={400}
             className="img-contain"
             loading="lazy"
+            unoptimized
           />
         </div>
 

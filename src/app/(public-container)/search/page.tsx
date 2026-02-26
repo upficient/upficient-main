@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import ArrowheadRightOutline from '@/components/Icons/ArrowheadRightOutline';
-import { getImagePath } from '@/services/common.service';
-import { getAllPages, searchInFields } from '@/services/pages.service';
-import Image from 'next/image';
-import { redirect, useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import './page.scss';
+import ArrowheadRightOutline from "@/components/Icons/ArrowheadRightOutline";
+import { getImagePath } from "@/services/common.service";
+import { getAllPages, searchInFields } from "@/services/pages.service";
+import Image from "next/image";
+import { redirect, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import "./page.scss";
 
 function Page() {
   const searchParams = useSearchParams();
-  const initialQuery = searchParams.get('query');
+  const initialQuery = searchParams.get("query");
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState<any>(initialQuery);
   const [searchResults, setSearchResults] = useState<any[]>([]);
@@ -27,7 +27,7 @@ function Page() {
       const results = await searchInFields(term);
       setSearchResults(results);
     } catch (error) {
-      console.error('Error fetching search results:', error);
+      console.error("Error fetching search results:", error);
     }
   };
 
@@ -43,18 +43,18 @@ function Page() {
     redirect(`/${url}`);
   };
 
-    const fetchPages = async () => {
-      try {
-        const pagesData = await getAllPages("blog");
-        setData(pagesData);
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-      }
-    };
-  
-    useEffect(() => {
-      fetchPages();
-    }, []);
+  const fetchPages = async () => {
+    try {
+      const pagesData = await getAllPages("blog");
+      setData(pagesData);
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchPages();
+  }, []);
 
   return (
     <>
@@ -64,13 +64,23 @@ function Page() {
             <div className="col-lg-8 col-md-8">
               <div className="mainBlogBoxes d-flex flexwrap">
                 {searchResults.map((result) => {
-                  const pageTitleField = result.fields.find((field: any) => field.key === 'pageTitle');
-                  const pageDescription = result.fields.find((field: any) => field.key === 'metaDescription');
-                  const pageSlug = result.fields.find((field: any) => field.key === 'slug');
-                  const pageImage = result.fields.find((field: any) => field.key === 'featureImage');
+                  const pageTitleField = result.fields.find(
+                    (field: any) => field.key === "pageTitle",
+                  );
+                  const pageDescription = result.fields.find(
+                    (field: any) => field.key === "metaDescription",
+                  );
+                  const pageSlug = result.fields.find(
+                    (field: any) => field.key === "slug",
+                  );
+                  const pageImage = result.fields.find(
+                    (field: any) => field.key === "featureImage",
+                  );
                   const date = new Date(result.publishDate);
-                  const day = date.getDate().toString().padStart(2, '0');
-                  const month = date.toLocaleString('default', { month: 'short' });
+                  const day = date.getDate().toString().padStart(2, "0");
+                  const month = date.toLocaleString("default", {
+                    month: "short",
+                  });
                   return (
                     <div key={result._id} className="blogBox relative">
                       <div className="blogDate">
@@ -79,20 +89,29 @@ function Page() {
                       </div>
                       <div className="blogImg">
                         <Image
-                          src={getImagePath('hero_front.webp', pageImage?.value)}
-                          alt={pageTitleField?.value || 'Blog Image'}
+                          src={getImagePath(
+                            "hero_front.webp",
+                            pageImage?.value,
+                          )}
+                          alt={pageTitleField?.value || "Blog Image"}
                           width={400}
                           height={400}
                           className="img-cover"
+                          unoptimized
                         />
                       </div>
                       <div className="blogName">
-                        <h4 onClick={() => navigateToBlog(pageSlug?.value)}>{pageTitleField?.value || 'Untitled'}</h4>
-                        {pageDescription?.value && <p>
-                         {pageDescription?.value}
-                        </p>}
+                        <h4 onClick={() => navigateToBlog(pageSlug?.value)}>
+                          {pageTitleField?.value || "Untitled"}
+                        </h4>
+                        {pageDescription?.value && (
+                          <p>{pageDescription?.value}</p>
+                        )}
                       </div>
-                      <div className="blogBtns d-flex align-items-center" onClick={() => navigateToBlog(pageSlug?.value)}>
+                      <div
+                        className="blogBtns d-flex align-items-center"
+                        onClick={() => navigateToBlog(pageSlug?.value)}
+                      >
                         <p>
                           Read More
                           <span>
@@ -131,7 +150,7 @@ function Page() {
                     {data.slice(0, 5).map((post: any) => {
                       const recentTitle =
                         post.fields.find(
-                          (field: any) => field.key === "pageTitle"
+                          (field: any) => field.key === "pageTitle",
                         )?.value || "Untitled";
                       const recentSlug =
                         post.fields.find((field: any) => field.key === "slug")
@@ -154,6 +173,6 @@ function Page() {
       </section>
     </>
   );
-};
+}
 
 export default Page;

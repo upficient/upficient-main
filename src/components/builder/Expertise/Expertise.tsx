@@ -147,6 +147,7 @@ const Expertise: React.FC<{ data: any }> = ({ data }) => {
                                 objectPosition: "bottom",
                                 marginLeft: "10px",
                               }}
+                              unoptimized
                             />
                           </span>
                         )}
@@ -169,16 +170,15 @@ const Expertise: React.FC<{ data: any }> = ({ data }) => {
                 {/* Image Section */}
                 <div className="col-lg-6 col-md-6 image">
                   <div className="expertiseImg">
-                    <Link href={getImagePath("expert.webp", box.imageSrc)}>
-                      <Image
-                        src={getImagePath("expert.webp", box.imageSrc)}
-                        alt={box.imageAlt.trim() || "Default Alt Text"}
-                        width={600}
-                        height={400}
-                        className="img-contain"
-                        loading="lazy"
-                      />
-                    </Link>
+                    <Image
+                      src={getImagePath("expert.webp", box.imageSrc)}
+                      alt={box.imageAlt.trim() || "Default Alt Text"}
+                      width={600}
+                      height={400}
+                      className="img-contain"
+                      loading="lazy"
+                      unoptimized
+                    />
                   </div>
                 </div>
               </div>

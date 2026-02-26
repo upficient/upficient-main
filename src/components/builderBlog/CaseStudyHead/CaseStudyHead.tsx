@@ -35,6 +35,7 @@ const CaseStudyHead: React.FC<{ data: any }> = ({ data }) => {
                   width={800}
                   className="img-contain"
                   loading="lazy"
+                  unoptimized
                 />
               </div>
             </div>

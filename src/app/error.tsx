@@ -20,6 +20,7 @@ export default function Error({}: { error: Error; reset: () => void }) {
                   height={170}
                   alt="404"
                   loading="lazy"
+                  unoptimized
                 />
               </Link>
             </h1>

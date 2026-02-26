@@ -46,6 +46,7 @@ const LogoInnerSlider: React.FC<LogoInnerSliderProps> = ({ logos }) => {
               width={600}
               height={600}
               className="logo-img"
+              unoptimized
             />
           </div>
         </SwiperSlide>

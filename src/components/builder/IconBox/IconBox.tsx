@@ -55,6 +55,7 @@ const IconBox: React.FC<{ data: any }> = ({ data }) => {
                         height={400}
                         className="img-contain"
                         loading="lazy"
+                        unoptimized
                       />
                     </div>
                     <div className="iconContent">

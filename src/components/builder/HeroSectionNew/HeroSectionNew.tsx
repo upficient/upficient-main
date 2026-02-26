@@ -30,6 +30,7 @@ const HeroSectionNew: React.FC<{ data: any }> = ({ data }) => {
           className="BadgeImage"
           width={500}
           height={500}
+          unoptimized
         />
       )}
       <div className="container-fluid position-relative" style={{ zIndex: 2 }}>
@@ -86,6 +87,7 @@ const HeroSectionNew: React.FC<{ data: any }> = ({ data }) => {
                   height={1400}
                   className="img-contain"
                   priority
+                  unoptimized
                 />
               </div>
             )}

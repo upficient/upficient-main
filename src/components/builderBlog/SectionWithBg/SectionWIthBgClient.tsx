@@ -134,6 +134,7 @@ const SectionWithBgClient: React.FC<{ data: any }> = ({ data }) => {
                     objectPosition: styles.imagePosition || undefined,
                   }}
                   loading="lazy"
+                  unoptimized
                 />
               )}
             </div>

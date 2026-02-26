@@ -133,6 +133,7 @@ const Header = () => {
                     height={500}
                     loading="lazy"
                     alt="mega menu icon"
+                    unoptimized
                   />
                 </div>
                 <div className="content">
@@ -185,6 +186,7 @@ const Header = () => {
                     alt="Logo"
                     className="img-contain"
                     loading="lazy"
+                    unoptimized
                   />
                 </Link>
               </div>

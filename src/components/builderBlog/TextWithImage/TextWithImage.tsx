@@ -58,6 +58,7 @@ const TextWithImage: React.FC<{ data: any }> = ({ data }) => {
                   alt={data?.imageAlt || ""}
                   className="img-contain"
                   loading="lazy"
+                  unoptimized
                 />
               </div>
             </div>

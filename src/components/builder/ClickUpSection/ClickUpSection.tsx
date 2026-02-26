@@ -133,6 +133,7 @@ const ClickUpSection: React.FC<{ data: any }> = ({ data }) => {
                     height={600}
                     className="img-contain"
                     loading="lazy"
+                    unoptimized
                   />
                 </Link>
               </div>

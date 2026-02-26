@@ -47,12 +47,13 @@ const TableOfContent: React.FC<{ data: any }> = ({ data }) => {
                             className="img-contain"
                             src={getImagePath(
                               "bgsec1img.webp",
-                              journeyItem?.icon
+                              journeyItem?.icon,
                             )}
                             alt=""
                             width={150}
                             height={150}
                             loading="lazy"
+                            unoptimized
                           />
                         </div>
                         <div className="title">

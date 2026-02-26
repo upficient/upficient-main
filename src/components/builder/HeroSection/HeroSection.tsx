@@ -30,6 +30,7 @@ const HeroSection: React.FC<{ data: any }> = ({ data }) => {
           className="BadgeImage"
           width={500}
           height={500}
+          unoptimized
         />
       )}
       {data?.backgroundImage && (
@@ -38,6 +39,7 @@ const HeroSection: React.FC<{ data: any }> = ({ data }) => {
           alt="Background"
           layout="fill"
           objectFit={styles.bgsize || "cover"}
+          unoptimized
           objectPosition={(() => {
             switch (styles.bgposition) {
               case "topright":
@@ -113,6 +115,7 @@ const HeroSection: React.FC<{ data: any }> = ({ data }) => {
                   height={600}
                   className="img-contain"
                   priority
+                  unoptimized
                 />
               </div>
             )}

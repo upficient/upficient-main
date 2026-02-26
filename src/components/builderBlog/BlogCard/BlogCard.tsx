@@ -49,6 +49,7 @@ const BlogCard: React.FC<{ data: any }> = ({ data }) => {
             alt={imageAlt || "Blog image"}
             height={600}
             width={800}
+            unoptimized
           />
         </div>
 
@@ -77,6 +78,7 @@ const BlogCard: React.FC<{ data: any }> = ({ data }) => {
               alt="author avatar"
               height={35}
               width={35}
+              unoptimized
             />
             <span style={{ marginLeft: "10px" }}>
               {authorName || "Unknown Author"}

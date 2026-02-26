@@ -11,7 +11,11 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { z } from "zod";
-import { addUser, getUserById, updateUser } from "../../../services/user.service";
+import {
+  addUser,
+  getUserById,
+  updateUser,
+} from "../../../services/user.service";
 import "./UserForm.scss";
 
 export const AddUserFormValidator = z.object({
@@ -59,10 +63,12 @@ export const UpdateUserFormValidator = z.object({
     }),
   role: z
     .string({ required_error: "Role is required" })
-    .min(1, "Role is required")
+    .min(1, "Role is required"),
 });
 
-type UserFormInputs = z.infer<typeof AddUserFormValidator | typeof UpdateUserFormValidator>;
+type UserFormInputs = z.infer<
+  typeof AddUserFormValidator | typeof UpdateUserFormValidator
+>;
 
 interface UserFormProps {
   userId: string | null;
@@ -80,7 +86,9 @@ const UserForm = ({ userId }: UserFormProps) => {
     setValue,
     formState: { errors },
   } = useForm<UserFormInputs>({
-    resolver: zodResolver(userId ? UpdateUserFormValidator : AddUserFormValidator),
+    resolver: zodResolver(
+      userId ? UpdateUserFormValidator : AddUserFormValidator,
+    ),
   });
 
   useEffect(() => {
@@ -156,9 +164,8 @@ const UserForm = ({ userId }: UserFormProps) => {
     }
   };
 
-
   if (loading) {
-    return <LoaderComponent/>;
+    return <LoaderComponent />;
   }
 
   return (
@@ -175,7 +182,10 @@ const UserForm = ({ userId }: UserFormProps) => {
             >
               User Image
             </label>
-            <div className="image-preview-container" style={{ marginTop: "10px" }}>
+            <div
+              className="image-preview-container"
+              style={{ marginTop: "10px" }}
+            >
               <input
                 type="file"
                 id="imageUpload"
@@ -196,12 +206,21 @@ const UserForm = ({ userId }: UserFormProps) => {
                       borderRadius: "50%",
                     }}
                     loading="lazy"
+                    unoptimized
                   />
                   <div className="prevbtn">
-                    <button type="button" className="imgprev" onClick={handleEditImage}>
+                    <button
+                      type="button"
+                      className="imgprev"
+                      onClick={handleEditImage}
+                    >
                       <EditOutline />
                     </button>
-                    <button type="button" className="imgprev" onClick={handleRemoveImage}>
+                    <button
+                      type="button"
+                      className="imgprev"
+                      onClick={handleRemoveImage}
+                    >
                       <Trash2Outline />
                     </button>
                   </div>
@@ -209,17 +228,20 @@ const UserForm = ({ userId }: UserFormProps) => {
               ) : (
                 <div style={{ width: "fit-content", margin: "0 auto" }}>
                   <Image
-                    src={getImagePath('dashimg/avtar.jpg')}
+                    src={getImagePath("dashimg/avtar.jpg")}
                     alt="Dummy Preview"
                     width={100}
                     height={100}
+                    unoptimized
                     style={{
                       objectFit: "cover",
                       cursor: "pointer",
                       borderRadius: "50%",
                     }}
                     loading="lazy"
-                    onClick={() => document.getElementById("imageUpload")?.click()}
+                    onClick={() =>
+                      document.getElementById("imageUpload")?.click()
+                    }
                   />
                 </div>
               )}
@@ -296,11 +318,17 @@ const UserForm = ({ userId }: UserFormProps) => {
                   <option value="admin">Admin</option>
                   <option value="manager">Manager</option>
                 </select>
-                {errors.role && <span className="invalid-feedback">{errors.role.message}</span>}
+                {errors.role && (
+                  <span className="invalid-feedback">
+                    {errors.role.message}
+                  </span>
+                )}
               </div>
             </div>
             <div className="col-lg-12">
-              <button type="submit" className="btn btn-primary">Save</button>
+              <button type="submit" className="btn btn-primary">
+                Save
+              </button>
             </div>
           </div>
         </div>

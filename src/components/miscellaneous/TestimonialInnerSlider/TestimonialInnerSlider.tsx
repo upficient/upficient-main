@@ -60,6 +60,7 @@ const TestimonialInnerSlider: React.FC<Props> = ({ testimonials }) => {
               alt={t.name}
               width={80}
               height={80}
+              unoptimized
             />
           </button>
         ))}

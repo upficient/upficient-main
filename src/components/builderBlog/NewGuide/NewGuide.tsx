@@ -123,6 +123,7 @@ const NewGuide: React.FC<{ data: any }> = ({ data }) => {
                         alt={guide.title || "Guide section image"}
                         width={1200}
                         height={1200}
+                        unoptimized
                       />
                     )}
                   </div>

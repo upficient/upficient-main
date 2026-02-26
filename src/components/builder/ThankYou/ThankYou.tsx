@@ -45,6 +45,7 @@ const ThankYou: React.FC<ThankYouProps> = ({ data }) => {
               width={140}
               height={140}
               className="arrow"
+              unoptimized
             />
           )}
         </div>

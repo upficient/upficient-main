@@ -121,6 +121,7 @@ function GuidesMain(type: any) {
                               height={400}
                               className="img-cover"
                               loading="lazy"
+                              unoptimized
                             />
                           </div>
                           <div className="blogName">

@@ -45,6 +45,7 @@ const ServiceBox: React.FC<ServiceBoxProps> = ({
             height={400}
             className="img-contain"
             loading="lazy"
+            unoptimized
           />
         </div>
         <div className="title">

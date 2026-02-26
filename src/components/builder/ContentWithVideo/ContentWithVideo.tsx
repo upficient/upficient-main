@@ -61,6 +61,7 @@ const ContentWithVideo: React.FC<{ data: any }> = ({ data }) => {
                         height={600}
                         className="img-contain"
                         loading="lazy"
+                        unoptimized
                       />
                       <h3>{category.title?.trim() || "Category Title"}</h3>
                     </Link>
