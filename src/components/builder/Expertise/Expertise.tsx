@@ -124,20 +124,29 @@ const Expertise: React.FC<{ data: any }> = ({ data }) => {
                     </div>
                     <div className="title">
                       <h3
-                        dangerouslySetInnerHTML={{
-                          __html: box.title.trim() || "Default Title",
-                        }}
                         style={{
                           ...(styles.rowheadingColor
                             ? { color: styles.rowheadingColor }
                             : {}),
                         }}
                       >
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: box.title?.trim() || "Default Title",
+                          }}
+                        />
                         {box?.titleImage && (
                           <span className="title-icon">
-                            <img
-                              src={getImagePath(box.titleImage)}
+                            <Image
+                              src={getImagePath("", box.titleImage)}
                               alt="icon"
+                              width={34}
+                              height={34}
+                              style={{
+                                objectFit: "contain",
+                                objectPosition: "bottom",
+                                marginLeft: "10px",
+                              }}
                             />
                           </span>
                         )}
