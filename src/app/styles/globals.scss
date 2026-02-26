@@ -297,7 +297,16 @@ div#page-clickup-consultants {
   }
   section.upficient-testimonial-wrapper {
     background: linear-gradient(180deg, #a064ff 0%, #ffffff 100%);
-    background-image: none !important;
+    padding-top: 180px;
+
+    .testimonialhead h2 {
+      color: #402e63;
+    }
+    p.testimonial-text,
+    .testimonial-meta strong.meta-name,
+    .testimonial-meta span.meta-company {
+      color: #402e63;
+    }
   }
 }
 div#page-clickup-onboarding-service {
