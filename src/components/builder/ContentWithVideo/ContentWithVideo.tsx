@@ -53,7 +53,7 @@ const ContentWithVideo: React.FC<{ data: any }> = ({ data }) => {
               <div className="d-flex categoryboxes-main">
                 {data?.cetagories?.map((category: any, index: number) => (
                   <div className="categorybox" key={index}>
-                    <Link href={category.link?.trim() || ""}>
+                    <Link href={category.link?.trim() || "javascript:void(0)"}>
                       <Image
                         src={getImagePath("", category.image)}
                         alt="category image"

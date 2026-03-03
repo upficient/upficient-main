@@ -186,8 +186,29 @@ p {
   }
 }
 
+// home page css
+div#page-home {
+  .HeroSectionNew .heroImg {
+    right: -15px;
+  }
+}
+
 // service page css
 div#page-our-services {
+  section#main-service {
+    section.mainHead.bg-purple,
+    section.services {
+      background: #a064ff !important;
+    }
+    section.mainHead.bg-purple {
+      section.mainHead.bg-purple .heading.text-center h2 {
+        color: #fff !important;
+      }
+    }
+    section#bottomsection {
+      z-index: 9;
+    }
+  }
   .content-with-video {
     background: transparent;
     .categoryboxes {
