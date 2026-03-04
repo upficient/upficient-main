@@ -53,7 +53,7 @@ const ContentWithVideo: React.FC<{ data: any }> = ({ data }) => {
               <div className="d-flex categoryboxes-main">
                 {data?.cetagories?.map((category: any, index: number) => (
                   <div className="categorybox" key={index}>
-                    <Link href={category.link?.trim() || "javascript:void(0)"}>
+                    {/* <Link href={category.link?.trim() || "javascript:void(0)"}>
                       <Image
                         src={getImagePath("", category.image)}
                         alt="category image"
@@ -64,7 +64,35 @@ const ContentWithVideo: React.FC<{ data: any }> = ({ data }) => {
                         unoptimized
                       />
                       <h3>{category.title?.trim() || "Category Title"}</h3>
-                    </Link>
+                    </Link> */}
+                    const hasLink = category.link?.trim();
+                    {category.link?.trim() ? (
+                      <Link href={category.link?.trim()}>
+                        <Image
+                          src={getImagePath("", category.image)}
+                          alt="category image"
+                          width={800}
+                          height={600}
+                          className="img-contain"
+                          loading="lazy"
+                          unoptimized
+                        />
+                        <h3>{category.title?.trim() || "Category Title"}</h3>
+                      </Link>
+                    ) : (
+                      <div className="childcatbox">
+                        <Image
+                          src={getImagePath("", category.image)}
+                          alt="category image"
+                          width={800}
+                          height={600}
+                          className="img-contain"
+                          loading="lazy"
+                          unoptimized
+                        />
+                        <h3>{category.title?.trim() || "Category Title"}</h3>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

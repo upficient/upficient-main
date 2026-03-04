@@ -186,6 +186,35 @@ p {
   }
 }
 
+.servicesBoxmain:nth-child(4) {
+  .servicesBox {
+    .title {
+      h4 {
+        color: #402e63 !important;
+      }
+    }
+    .para {
+      p {
+        color: #402e63 !important;
+      }
+    }
+  }
+}
+.servicesBoxmain:nth-child(5) {
+  .servicesBox {
+    .title {
+      h4 {
+        color: #ffffff !important;
+      }
+    }
+    .para {
+      p {
+        color: #ffffff !important;
+      }
+    }
+  }
+}
+
 // home page css
 div#page-home {
   .HeroSectionNew .heroImg {
@@ -268,6 +297,9 @@ div#page-clickup-integrations {
       display: none;
     }
   }
+  section#phase3 {
+    background: linear-gradient(359.91deg, #e6e2ff 0.09%, #ffffff 75.75%);
+  }
   section#phase4 {
     position: relative;
     margin-top: -100px;
@@ -291,6 +323,10 @@ div#page-management-maintenance {
   }
   .expertiseContent .title {
     padding-top: 5px !important;
+  }
+  section#phase3 {
+    background: linear-gradient(359.91deg, #e6e2ff 0.09%, #ffffff 75.75%);
+    padding-bottom: 100px;
   }
   section.content-with-video {
     background: #fff !important;
@@ -334,6 +370,18 @@ div#page-clickup-consultants {
   section.rating {
     display: none;
   }
+  section.clickup {
+    .content p {
+      color: #545263;
+    }
+  }
+  .servBoxes {
+    .clickBox:nth-child(1),
+    .clickBox:nth-child(2) {
+      flex: 0 calc(48% - 16px) !important;
+    }
+  }
+
   section.upficient-testimonial-wrapper {
     background: linear-gradient(180deg, #a064ff 0%, #ffffff 100%) !important;
     padding-top: 180px;
@@ -466,4 +514,46 @@ div#page-about-upficient-experts {
       }
     }
   }
+}
+.paginationWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pageCircle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #8b5cf6;
+  background: transparent;
+  color: #8b5cf6;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pageCircle:hover {
+  background: #8b5cf6;
+  color: #fff;
+}
+
+.pageCircle.active {
+  background: #8b5cf6;
+  color: #fff;
+}
+
+.pageCircle.arrow {
+  font-size: 18px;
+}
+
+.dots {
+  font-size: 18px;
+  color: #8b5cf6;
 }

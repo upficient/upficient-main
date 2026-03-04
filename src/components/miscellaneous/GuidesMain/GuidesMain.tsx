@@ -183,7 +183,7 @@ function GuidesMain(type: any) {
             </div>
 
             {/* Pagination */}
-            <div className="pagination d-flex justify-content-end">
+            {/* <div className="pagination d-flex justify-content-end">
               {totalPages > 1 && (
                 <>
                   {currentPage > 1 && (
@@ -200,6 +200,69 @@ function GuidesMain(type: any) {
                     </button>
                   )}
                 </>
+              )}
+
+            </div> */}
+            <div className="paginationWrapper">
+              {totalPages > 1 && (
+                <div className="pagination">
+                  {/* Previous Arrow */}
+                  {currentPage > 1 && (
+                    <button
+                      className="pageCircle arrow"
+                      onClick={() => handlePageChange(currentPage - 1)}
+                    >
+                      ←
+                    </button>
+                  )}
+
+                  {/* Page Numbers */}
+                  {Array.from({ length: totalPages }, (_, index) => {
+                    const page = index + 1;
+
+                    // Show first, last, current, and neighbors
+                    if (
+                      page === 1 ||
+                      page === totalPages ||
+                      page === currentPage ||
+                      page === currentPage - 1 ||
+                      page === currentPage + 1
+                    ) {
+                      return (
+                        <button
+                          key={page}
+                          onClick={() => handlePageChange(page)}
+                          className={`pageCircle ${
+                            currentPage === page ? "active" : ""
+                          }`}
+                        >
+                          {page}
+                        </button>
+                      );
+                    }
+
+                    // Show dots
+                    if (page === currentPage - 2 || page === currentPage + 2) {
+                      return (
+                        <span key={page} className="dots">
+                          ...
+                        </span>
+                      );
+                    }
+
+                    return null;
+                  })}
+
+                  {/* Next Arrow */}
+                  {currentPage < totalPages && (
+                    <button
+                      className="pageCircle arrow"
+                      onClick={() => handlePageChange(currentPage + 1)}
+                    >
+                      →
+                    </button>
+                  )}
+                </div>
               )}
             </div>
           </div>

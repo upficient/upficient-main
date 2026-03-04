@@ -2,6 +2,9 @@
   padding-top: 50px;
   padding-bottom: 300px;
   background: var(--bg-purple);
+  .row {
+    justify-content: center;
+  }
   .servicesBoxmain {
     margin: 20px 0;
     .servicesBox {
