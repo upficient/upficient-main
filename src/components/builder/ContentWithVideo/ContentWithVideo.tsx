@@ -65,7 +65,6 @@ const ContentWithVideo: React.FC<{ data: any }> = ({ data }) => {
                       />
                       <h3>{category.title?.trim() || "Category Title"}</h3>
                     </Link> */}
-                    const hasLink = category.link?.trim();
                     {category.link?.trim() ? (
                       <Link href={category.link?.trim()}>
                         <Image
