@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "./footer.scss";
 import LazyMap from "@/components/miscellaneous/LazyMap/LazyMap";
+import YoutubeIcon from "@/components/Icons/YoutubeIcon";
 const Footer = async () => {
   const menuItems = [
     { name: "ClickUp Onboarding", href: "/clickup-onboarding-service" },
@@ -32,10 +33,15 @@ const Footer = async () => {
     },
   ];
   const menuItemsLegal = [
-    { name: "Privacy Policy", href: "/clickup-templates/privacy-policy/" },
+    {
+      name: "Privacy Policy",
+      href: "/clickup-templates/privacy-policy/",
+      newTab: true,
+    },
     {
       name: "Terms & Conditions",
       href: "/clickup-templates/terms-conditions-of-purchase/",
+      newTab: true,
     },
   ];
   const menuItemsLearn = [
@@ -79,6 +85,13 @@ const Footer = async () => {
                 <h4>Our Networks</h4>
               </div>
               <div className="socialIcons d-flex">
+                <Link
+                  href="https://www.youtube.com/@Upficient"
+                  target="_blank"
+                  aria-label="Instagram link"
+                >
+                  <YoutubeIcon />
+                </Link>
                 <Link
                   href="https://www.instagram.com/upficient/"
                   target="_blank"

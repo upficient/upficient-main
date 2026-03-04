@@ -46,7 +46,7 @@ const Header = () => {
           },
           {
             icon: "effi1.webp",
-            title: "Integrations & Automation",
+            title: "ClickUp Integrations",
             description: "Your ultimate solution to optimize your workflows!",
             href: "/clickup-integrations/",
           },

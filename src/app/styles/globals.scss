@@ -234,9 +234,9 @@ div#page-our-services {
         color: #fff !important;
       }
     }
-    section#bottomsection {
-      z-index: 9;
-    }
+  }
+  section#bottomsection {
+    z-index: 9;
   }
   .content-with-video {
     background: transparent;
@@ -520,8 +520,9 @@ div#page-about-upficient-experts {
   justify-content: center;
   margin-top: 40px;
   .pagination button {
-    height: 40px;
-    width: 40px;
+    font-family: "poppins";
+    height: 50px;
+    width: 50px;
     border: 1px solid;
   }
 }
@@ -561,4 +562,8 @@ div#page-about-upficient-experts {
 .dots {
   font-size: 18px;
   color: #8b5cf6;
+}
+button.pageCircle.arrow:hover {
+  background: transparent;
+  border: 1px solid #8b5cf6 !important;
 }

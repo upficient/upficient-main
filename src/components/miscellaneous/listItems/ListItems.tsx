@@ -5,6 +5,7 @@ import Link from "next/link";
 interface MenuItem {
   name: string;
   href: string;
+  newTab?: boolean;
 }
 
 interface MenuProps {
@@ -17,7 +18,9 @@ const ListItems: React.FC<MenuProps> = ({ items, classes = "" }) => {
     <ul className={`${classes} list-none`}>
       {items.map((item, index) => (
         <li key={index} className={item.name === "Services" ? "dropdown" : ""}>
-          <Link href={item.href}>{item.name}</Link>
+          <Link href={item.href} target={item.newTab ? "_blank" : "_self"}>
+            {item.name}
+          </Link>
         </li>
       ))}
     </ul>
