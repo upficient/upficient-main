@@ -204,12 +204,12 @@ p {
   .servicesBox {
     .title {
       h4 {
-        color: #ffffff !important;
+        color: #402e63 !important;
       }
     }
     .para {
       p {
-        color: #ffffff !important;
+        color: #402e63 !important;
       }
     }
   }
@@ -220,10 +220,18 @@ div#page-home {
   .HeroSectionNew .heroImg {
     right: -15px;
   }
+  section.partner-main-wrapper {
+    position: relative;
+    z-index: 9;
+  }
 }
 
 // service page css
 div#page-our-services {
+  .heroSection .heroImg {
+    position: relative;
+    right: 50%;
+  }
   section#main-service {
     section.mainHead.bg-purple,
     section.services {
