@@ -26,6 +26,8 @@ function Page() {
     try {
       const results = await searchInFields(term);
       setSearchResults(results);
+
+      console.log(results);
     } catch (error) {
       console.error("Error fetching search results:", error);
     }
@@ -76,14 +78,14 @@ function Page() {
                   const pageImage = result.fields.find(
                     (field: any) => field.key === "featureImage",
                   );
-                  const date = new Date(result.publishDate);
+                  const date = new Date(result.createdAt);
                   const day = date.getDate().toString().padStart(2, "0");
                   const month = date.toLocaleString("default", {
                     month: "short",
                   });
                   return (
                     <div key={result._id} className="blogBox relative">
-                      <div className="blogDate">
+                      <div className="blogDate test">
                         <h4>{day}</h4>
                         <p>{month}</p>
                       </div>

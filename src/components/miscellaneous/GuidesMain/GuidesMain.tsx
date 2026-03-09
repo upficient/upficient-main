@@ -92,11 +92,11 @@ function GuidesMain(type: any) {
                       <div className="blogBox relative" key={item._id}>
                         <Link href={`/${slug}`}>
                           <div className="blogDate">
-                            {item.publishDate ? (
+                            {item.createdAt ? (
                               <>
-                                <h4>{new Date(item.publishDate).getDate()}</h4>
+                                <h4>{new Date(item.createdAt).getDate()}</h4>
                                 <p>
-                                  {new Date(item.publishDate).toLocaleString(
+                                  {new Date(item.createdAt).toLocaleString(
                                     "en-US",
                                     { month: "short" },
                                   )}

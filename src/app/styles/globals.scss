@@ -512,6 +512,24 @@ div#page-about-upficient-experts {
   section.teamSec .empDesignation p {
     font-weight: 600;
   }
+
+  section#passionatesection .container {
+    max-width: 100%;
+    padding: 0;
+  }
+  section#passionatesection .container .align-items-center {
+    align-items: flex-start !important;
+  }
+  section#passionatesection .container .col-lg-5.col-md-5 {
+    margin: 0 auto;
+  }
+  section.logo-slider {
+    margin-top: -100px !important;
+  }
+  section#passionatesection .container .para p {
+    padding-bottom: 0 !important;
+    color: #402e63 !important;
+  }
 }
 @media screen and (max-width: 767px) {
   div#page-home .colorbgSec {
@@ -576,4 +594,8 @@ div#page-about-upficient-experts {
 button.pageCircle.arrow:hover {
   background: transparent;
   border: 1px solid #8b5cf6 !important;
+}
+.table-container {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
 }

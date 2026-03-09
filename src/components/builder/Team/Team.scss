@@ -34,7 +34,8 @@
     }
   }
   .teamMain > div {
-    flex: 0 calc(20% - 16px);
+    flex: 0 calc(25% - 16px);
+    text-align: center;
   }
 }
 @media screen and (max-width: 992px) {
