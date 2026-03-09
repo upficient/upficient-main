@@ -12,7 +12,7 @@ const Footer = async () => {
   const menuItems = [
     { name: "ClickUp Onboarding", href: "/clickup-onboarding-service" },
     { name: "Workspace Optimization", href: "/clickup-workspace-optimization" },
-    { name: "Integrations & Automation", href: "/clickup-integrations" },
+    { name: "ClickUp Integrations", href: "/clickup-integrations" },
     { name: "Management & Maintenance", href: "/management-maintenance" },
     { name: "ClickUp Consulting", href: "/clickup-consultants" },
   ];
