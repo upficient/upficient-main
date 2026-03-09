@@ -15,6 +15,9 @@
       h3 {
         display: flex;
         align-items: center;
+        span {
+          width: min-content;
+        }
         span.title-icon {
           height: 34px;
           display: inline-block;
