@@ -230,6 +230,9 @@ div#page-home {
 
 // service page css
 div#page-our-services {
+  .heroSection {
+    background: linear-gradient(4.45deg, #e6e2ff 3.47%, #ffffff 82.53%);
+  }
   .heroSection .heroImg {
     position: relative;
     right: 50%;
@@ -467,6 +470,9 @@ div#page-clickup-onboarding-service {
 }
 
 div#page-about-upficient-experts {
+  .heroSection {
+    background: linear-gradient(4.45deg, #e6e2ff 3.47%, #ffffff 82.53%);
+  }
   section#chrisdetailsec .heading {
     display: none;
   }
