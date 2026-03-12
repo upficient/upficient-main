@@ -44,8 +44,8 @@
         margin-top: 30px;
         min-height: 80px;
         h4 {
-          font-size: 18px;
-          line-height: 26px;
+          font-size: 18px !important;
+          line-height: 26px !important;
           font-weight: 500;
           width: fit-content;
           cursor: pointer;
@@ -55,7 +55,7 @@
         }
       }
       .blogImg {
-        height: 218px;
+        height: 218px !important;
         width: 100%;
       }
       .blogDate {
