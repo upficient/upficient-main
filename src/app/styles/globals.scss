@@ -227,7 +227,11 @@ div#page-home {
     z-index: 9;
   }
 }
-
+div#page-case-study {
+  .heroSection {
+    background: linear-gradient(4.45deg, #e6e2ff 3.47%, #ffffff 82.53%);
+  }
+}
 // service page css
 div#page-our-services {
   .heroSection {
