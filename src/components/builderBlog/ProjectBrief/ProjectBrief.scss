@@ -1,0 +1,112 @@
+.pb-section {
+  background-color: var(--secondary);
+  padding: 70px 0 80px;
+  text-align: center;
+  color: #fff;
+
+  // ── Title ──────────────────────────────────────────────────
+  &__title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 36px;
+    letter-spacing: -0.5px;
+
+    @media (max-width: 767px) {
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+  }
+
+  // ── Body text ──────────────────────────────────────────────
+  &__body {
+    max-width: 820px;
+    margin: 0 auto 56px;
+  }
+
+  &__para {
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    // Inline links match screenshot (white underline)
+    a {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+
+    @media (max-width: 767px) {
+      font-size: 15px;
+    }
+  }
+
+  // ── Stats grid ─────────────────────────────────────────────
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 16px;
+    max-width: 900px;
+    margin: 0 auto;
+
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 16px;
+    }
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__stat-number {
+    font-size: 52px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: -1px;
+
+    @media (max-width: 991px) {
+      font-size: 40px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 44px;
+    }
+  }
+
+  &__stat-label {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.2px;
+  }
+
+  &__stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 2px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

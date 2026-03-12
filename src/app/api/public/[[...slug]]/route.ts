@@ -4,6 +4,20 @@ import path from "path";
 
 const publicFolder = path.resolve("public");
 
+const MIME_TYPES: Record<string, string> = {
+  jpg: "image/jpeg",
+  jpeg: "image/jpeg",
+  png: "image/png",
+  gif: "image/gif",
+  webp: "image/webp",
+  svg: "image/svg+xml",
+  ico: "image/x-icon",
+  avif: "image/avif",
+  pdf: "application/pdf",
+  mp4: "video/mp4",
+  webm: "video/webm",
+};
+
 export async function GET(request: Request, { params }: any) {
   try {
     const { slug } = (await params) || [];
@@ -13,8 +27,16 @@ export async function GET(request: Request, { params }: any) {
     const fileContent = await fs.readFile(filePath);
     if (!fileContent) throw new Error();
 
-    return new NextResponse(fileContent);
+    const ext = path.extname(filePath).toLowerCase().replace(".", "");
+    const contentType = MIME_TYPES[ext] || "application/octet-stream";
+
+    return new NextResponse(fileContent, {
+      headers: {
+        "Content-Type": contentType,
+        "Content-Disposition": "inline",
+      },
+    });
   } catch (err) {
-    return new NextResponse(null);
+    return new NextResponse(null, { status: 404 });
   }
 }

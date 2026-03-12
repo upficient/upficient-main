@@ -1,0 +1,246 @@
+.cs-hero {
+  padding: 40px 0 60px;
+  background: linear-gradient(135deg, #f0eeff 0%, #e8f0ff 100%);
+
+  // ── Back link ──────────────────────────────────────────────
+  &__back {
+    margin-bottom: 32px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    border: 1.5px solid var(--primary);
+    border-radius: 50px;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+      background 0.2s,
+      color 0.2s;
+
+    svg {
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+  }
+
+  // ── Image ──────────────────────────────────────────────────
+  &__image-wrap {
+    border-radius: 20px;
+    overflow: hidden;
+    background: #c8cfc0;
+    height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  // ── Content ────────────────────────────────────────────────
+  &__content {
+    padding-left: 20px;
+  }
+
+  // ── Tags ───────────────────────────────────────────────────
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+
+    &--filled {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+  }
+
+  // ── Title ──────────────────────────────────────────────────
+  &__title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a1035;
+    line-height: 1.3;
+    margin-bottom: 14px;
+
+    @media (max-width: 991px) {
+      font-size: 22px;
+    }
+  }
+
+  // ── Stars ──────────────────────────────────────────────────
+  &__stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 18px;
+  }
+
+  &__star {
+    fill: #ddd;
+    stroke: none;
+    transition: fill 0.15s;
+
+    &--filled {
+      fill: var(--secondary);
+    }
+  }
+
+  // ── Meta rows ──────────────────────────────────────────────
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  &__meta-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: #333;
+
+    strong {
+      font-weight: 700;
+      color: #1a1035;
+    }
+  }
+
+  &__check {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  // ── Complexity bar ────────────────────────────────────────
+  &__complexity {
+    margin-bottom: 32px;
+  }
+
+  &__complexity-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1035;
+    margin-bottom: 10px;
+  }
+
+  &__bar-wrap {
+    width: 100%;
+  }
+
+  &__bar-track {
+    width: 100%;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  &__bar-fill {
+    height: 100%;
+    background: #4caf50;
+    border-radius: 50px;
+    transition: width 0.4s ease;
+  }
+
+  &__bar-ticks {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #888;
+  }
+
+  // ── CTA button ─────────────────────────────────────────────
+  &__cta {
+    margin-top: 8px;
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: 16px 48px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #e040a0 0%, #8a3be2 100%);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition:
+      opacity 0.2s,
+      transform 0.2s;
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+      color: #fff;
+    }
+  }
+}
+
+// ── Responsive ────────────────────────────────────────────────
+@media (max-width: 767px) {
+  .cs-hero {
+    &__image-wrap {
+      height: 280px;
+      margin-bottom: 30px;
+    }
+
+    &__content {
+      padding-left: 0;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .cs-hero {
+    &__image-wrap {
+      height: 340px;
+      margin-bottom: 30px;
+    }
+
+    &__content {
+      padding-left: 0;
+      margin-top: 24px;
+    }
+  }
+}

@@ -25,6 +25,9 @@ const PageSettings: React.FC<ComponentsListProps> = ({
     pageTitle: pageSettings.pageTitle ? pageSettings.pageTitle : "",
     slug: pageSettings.slug ? pageSettings.slug : "",
     featureImage: pageSettings.featureImage ? pageSettings.featureImage : "",
+    category: pageSettings.category ? pageSettings.category : "",
+    excerpt: pageSettings.excerpt ? pageSettings.excerpt : "",
+    featured: pageSettings.featured ? pageSettings.featured : false,
     keywords: pageSettings.keywords ? pageSettings.keywords : "",
     metaTitle: pageSettings.metaTitle ? pageSettings.metaTitle : "",
     metaDescription: pageSettings.metaDescription
@@ -45,7 +48,7 @@ const PageSettings: React.FC<ComponentsListProps> = ({
     setFormData(updatedFormData);
 
     const updatedPageSettings = Object.entries(updatedFormData).map(
-      ([key, value]) => ({ key, value })
+      ([key, value]) => ({ key, value }),
     );
 
     setPageSettings([
@@ -57,7 +60,7 @@ const PageSettings: React.FC<ComponentsListProps> = ({
   };
 
   const handleImageUpload = async (
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const file = event.target.files?.[0];
     if (file) {
@@ -97,40 +100,78 @@ const PageSettings: React.FC<ComponentsListProps> = ({
         </div>
         {!pathname?.includes("/pages/") && (
           <>
-          <div className="form-field">
-            <label htmlFor="makehome">Set Feature Image</label>
-            <input
-              type="file"
-              id="featureImage"
-              name="featureImage"
-              onChange={(e) => {
-                handleImageUpload(e);
-              }}
-            />
-            <Image
-              src={getImagePath("default_img.png", formData?.featureImage)}
-              alt="Uploaded Preview"
-              width={100}
-              height={100}
-              style={{
-                objectFit: "cover",
-                cursor: "pointer",
-                borderRadius: "50%",
-              }}
-              loading="lazy"
-            />
-          </div>
-          <div className="form-field">
-            <label htmlFor="date">Date</label>
-            <input
-              type="date"
-              id="publishDate"
-              name="publishDate"
-              value={formData.publishDate}
-              onChange={handleChange}
-            />
-          </div>
-        </>
+            <div className="form-field">
+              <label htmlFor="makehome">Set Feature Image</label>
+              <input
+                type="file"
+                id="featureImage"
+                name="featureImage"
+                onChange={(e) => {
+                  handleImageUpload(e);
+                }}
+              />
+              <Image
+                src={getImagePath("default_img.png", formData?.featureImage)}
+                alt="Uploaded Preview"
+                width={100}
+                height={100}
+                style={{
+                  objectFit: "cover",
+                  cursor: "pointer",
+                  borderRadius: "50%",
+                }}
+                loading="lazy"
+              />
+            </div>
+            <div className="form-field">
+              <label htmlFor="date">Date</label>
+              <input
+                type="date"
+                id="publishDate"
+                name="publishDate"
+                value={formData.publishDate}
+                onChange={handleChange}
+              />
+            </div>
+            {pathname?.includes("/case-studies/") && (
+              <div className="form-field">
+                <label htmlFor="category">Category</label>
+                <input
+                  type="text"
+                  id="category"
+                  name="category"
+                  placeholder="e.g. Marketing, Operations, Finance"
+                  value={formData.category}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
+            {pathname?.includes("/case-studies/") && (
+              <div className="form-field">
+                <label htmlFor="excerpt">Excerpt</label>
+                <textarea
+                  id="excerpt"
+                  name="excerpt"
+                  placeholder="Short description shown on the case study card..."
+                  value={formData.excerpt}
+                  onChange={handleChange}
+                  rows={3}
+                />
+              </div>
+            )}
+            {pathname?.includes("/case-studies/") && (
+              <div className="form-field">
+                <label htmlFor="featured">Feature this Case Study</label>
+                <input
+                  type="checkbox"
+                  id="featured"
+                  name="featured"
+                  checked={eval(formData.featured)}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
+          </>
         )}
         {!pathsWhereSetHomeHidden.some((path) => pathname?.includes(path)) && (
           <div className="form-field">
