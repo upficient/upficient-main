@@ -86,9 +86,7 @@
   &__slide {
     position: relative;
     width: 100%;
-    height: 580px;
     overflow: hidden;
-    background: #eee;
 
     @media (max-width: 991px) {
       height: 420px;
