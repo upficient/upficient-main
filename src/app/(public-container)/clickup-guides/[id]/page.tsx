@@ -5,6 +5,9 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({ params }: any) {
   const currPath = (await params)?.id;
   const page = await getOnePage(currPath);
+  const featureImage = page.fields?.featureImage
+    ? `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/public/public/assets/components/${page.fields.featureImage}`
+    : `https://www.upficient.com/assets/img/clickuplogo.png`;
   if (!page || page.componentType !== "blog") {
     notFound();
   }
@@ -24,7 +27,7 @@ export async function generateMetadata({ params }: any) {
         type: "website",
         images: [
           {
-            url: `https://www.upficient.com/assets/img/clickuplogo.png`,
+            url: featureImage,
             alt: "Upficient Logo",
           },
         ],
