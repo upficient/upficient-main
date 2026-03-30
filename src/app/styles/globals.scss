@@ -231,6 +231,9 @@ div#page-case-study {
   .heroSection {
     background: linear-gradient(4.45deg, #e6e2ff 3.47%, #ffffff 82.53%);
   }
+  .heroSection img.BadgeImage {
+    display: none;
+  }
 }
 // service page css
 div#page-our-services {
