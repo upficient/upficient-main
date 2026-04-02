@@ -78,7 +78,7 @@ function CaseStudiesMain() {
           {/* Left Sidebar — Categories */}
           <div className="col-lg-3 col-md-3">
             <div className="cs-sidebar">
-              <h3 className="cs-sidebar__title">Categories</h3>
+              <h3 className="cs-sidebar__title">Organizations</h3>
               <ul className="cs-sidebar__list">
                 {categories.map(([cat, count]) => (
                   <li
