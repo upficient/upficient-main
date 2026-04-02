@@ -19,7 +19,13 @@ const CaseStudySlider: React.FC<{ data: any }> = ({ data }) => {
         backgroundColor: styles.backgroundColor || undefined,
       }}
     >
-      <CaseStudySliderMain images={images} heading={heading} />
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <CaseStudySliderMain images={images} heading={heading} />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

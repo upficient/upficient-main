@@ -32,7 +32,7 @@ const CaseStudyInfo: React.FC<{ data: any }> = ({ data }) => {
         }}
       >
         <div className="container">
-          <div className="row">
+          <div className="row align-items-center">
             <div className="col-lg-6">
               <div className="content">
                 <h3>{title}</h3>
