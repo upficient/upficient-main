@@ -62,6 +62,7 @@
         background 0.2s ease,
         color 0.2s ease;
       white-space: nowrap;
+      font-family: "poppins";
 
       &.active {
         background: var(--secondary);
@@ -109,6 +110,7 @@
       min-width: 180px;
       max-width: 280px;
       background: #fff;
+      height: 38px;
 
       svg {
         color: #888;
