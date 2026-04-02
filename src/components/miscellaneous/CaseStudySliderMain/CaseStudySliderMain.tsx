@@ -35,7 +35,9 @@ const CaseStudySliderMain: React.FC<Props> = ({ images, heading }) => {
               <Image
                 src={getImagePath("bgsec1img.webp", item.image)}
                 alt={item.alt || `Slide ${index + 1}`}
-                fill
+                width={0}
+                height={0}
+                sizes="100vw"
                 className="cs-slider__img"
                 loading="lazy"
                 unoptimized
