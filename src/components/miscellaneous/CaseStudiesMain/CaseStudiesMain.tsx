@@ -132,7 +132,7 @@ function CaseStudiesMain() {
                 </svg>
                 <input
                   type="text"
-                  placeholder="Search templates"
+                  placeholder="Search Case Studies"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />

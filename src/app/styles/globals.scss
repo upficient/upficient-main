@@ -234,6 +234,12 @@ div#page-case-study {
   .heroSection img.BadgeImage {
     display: none;
   }
+  section.colorbgSec {
+    margin-top: -100px;
+    position: relative;
+    z-index: 1;
+    border-radius: 100px 0 0 0;
+  }
 }
 // service page css
 div#page-our-services {
@@ -628,4 +634,67 @@ button.pageCircle.arrow:hover {
 }
 .caseInfo {
   padding: 0;
+}
+div#page-the-company-films {
+  section.cs-slider-section:first-child {
+    margin-top: 100px;
+  }
+  .pb-section__stats {
+    .pb-section__stat:nth-child(3) span.pb-section__stat-icon,
+    .pb-section__stat:nth-child(4) span.pb-section__stat-icon,
+    .pb-section__stat:nth-child(8) span.pb-section__stat-icon {
+      display: none;
+    }
+  }
+}
+div#page-the-ola-agency {
+  section.cs-slider-section:first-child {
+    margin-top: 100px;
+  }
+  .pb-section__stats {
+    .pb-section__stat:nth-child(3) span.pb-section__stat-icon,
+    .pb-section__stat:nth-child(4) span.pb-section__stat-icon,
+    .pb-section__stat:nth-child(8) span.pb-section__stat-icon {
+      display: none;
+    }
+  }
+}
+div#page-digifist {
+  section.cs-slider-section:first-child {
+    margin-top: 100px;
+  }
+  .pb-section__stats {
+    .pb-section__stat:nth-child(4) span.pb-section__stat-icon,
+    .pb-section__stat:nth-child(5) span.pb-section__stat-icon,
+    .pb-section__stat:nth-child(9) span.pb-section__stat-icon {
+      display: none;
+    }
+  }
+}
+div#page-lento-agency {
+  section.cs-slider-section:first-child {
+    margin-top: 100px;
+  }
+  .pb-section__stats {
+    .pb-section__stat:nth-child(4) span.pb-section__stat-icon,
+    .pb-section__stat:nth-child(5) span.pb-section__stat-icon,
+    .pb-section__stat:nth-child(9) span.pb-section__stat-icon {
+      display: none;
+    }
+  }
+}
+div#page-moms-for-liberty {
+  section.cs-slider-section:first-child {
+    margin-top: 100px;
+  }
+  .pb-section__stats {
+    .pb-section__stat:nth-child(4) span.pb-section__stat-icon,
+    .pb-section__stat:nth-child(5) span.pb-section__stat-icon,
+    .pb-section__stat:nth-child(9) span.pb-section__stat-icon {
+      display: none;
+    }
+  }
+}
+.caseInfo {
+  padding: 50px 0;
 }

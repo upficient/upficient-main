@@ -107,6 +107,9 @@
     height: 32px;
     color: rgba(255, 255, 255, 0.85);
     margin-top: 2px;
+    img {
+      object-fit: contain;
+    }
 
     svg {
       width: 100%;
