@@ -636,8 +636,8 @@ button.pageCircle.arrow:hover {
   padding: 0;
 }
 div#page-the-company-films {
-  section.cs-slider-section:first-child {
-    margin-top: 100px;
+  section.pb-section + section.cs-slider-section {
+    padding-top: 80px;
   }
   .pb-section__stats {
     .pb-section__stat:nth-child(3) span.pb-section__stat-icon,
@@ -648,8 +648,8 @@ div#page-the-company-films {
   }
 }
 div#page-the-ola-agency {
-  section.cs-slider-section:first-child {
-    margin-top: 100px;
+  section.pb-section + section.cs-slider-section {
+    padding-top: 80px;
   }
   .pb-section__stats {
     .pb-section__stat:nth-child(3) span.pb-section__stat-icon,
@@ -660,8 +660,8 @@ div#page-the-ola-agency {
   }
 }
 div#page-digifist {
-  section.cs-slider-section:first-child {
-    margin-top: 100px;
+  section.pb-section + section.cs-slider-section {
+    padding-top: 80px;
   }
   .pb-section__stats {
     .pb-section__stat:nth-child(4) span.pb-section__stat-icon,
@@ -672,8 +672,8 @@ div#page-digifist {
   }
 }
 div#page-lento-agency {
-  section.cs-slider-section:first-child {
-    margin-top: 100px;
+  section.pb-section + section.cs-slider-section {
+    padding-top: 80px;
   }
   .pb-section__stats {
     .pb-section__stat:nth-child(4) span.pb-section__stat-icon,
@@ -684,8 +684,8 @@ div#page-lento-agency {
   }
 }
 div#page-moms-for-liberty {
-  section.cs-slider-section:first-child {
-    margin-top: 100px;
+  section.pb-section + section.cs-slider-section {
+    padding-top: 80px;
   }
   .pb-section__stats {
     .pb-section__stat:nth-child(4) span.pb-section__stat-icon,
@@ -696,5 +696,5 @@ div#page-moms-for-liberty {
   }
 }
 .caseInfo {
-  padding: 50px 0;
+  padding: 50px 0 !important;
 }
