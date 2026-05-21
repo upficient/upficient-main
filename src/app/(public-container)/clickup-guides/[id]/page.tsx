@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }: any) {
-  const currPath = (await params)?.id;
+  const currPath = (params)?.id;
   const page = await getOnePage(currPath);
   const featureImage = page.fields?.featureImage
     ? `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/public/public/assets/components/${page.fields.featureImage}`
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: any) {
 }
 
 const DynamicComponents = async ({ params }: any) => {
-  const currPath = (await params)?.id;
+  const currPath = (params)?.id;
   const page = await getOnePage(currPath).catch((err) => {
     notFound();
   });
@@ -79,6 +79,10 @@ const DynamicComponents = async ({ params }: any) => {
               page.componentType === "page" ? "builder" : "builderBlog"
             }/${componentName}/${componentName}`
           ).then((mod) => mod.default),
+	    {
+ssr: true,
+    loading: () => null,
+	    }
         );
         return <DynamicComponent key={id} {...{ data: props }} />;
       })}

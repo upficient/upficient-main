@@ -100,7 +100,7 @@ const Footer = async () => {
                   <InstagramIcon />
                 </Link>
                 <Link
-                  href="http://www.linkedin.com/company/upficient"
+                  href="https://www.linkedin.com/company/upficient"
                   target="_blank"
                   aria-label="Linkedin link"
                 >

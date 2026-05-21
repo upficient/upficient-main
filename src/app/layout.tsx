@@ -7,9 +7,13 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css"; // Import the CSS
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import Head from "next/head";
+//import Head from "next/head";
 import { Suspense } from "react";
-import { GoogleAnalytics } from "@next/third-parties/google";
+//import { GoogleAnalytics } from "@next/third-parties/google";
+//import { GoogleTagManager } from '@next/third-parties/google'
+
+import Script from 'next/script';
+
 config.autoAddCss = false;
 
 const poppins = Poppins({
@@ -31,16 +35,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.className}>
-      <Head>
+     <head>
         <meta property="og:title" content="Upficient" />
         <meta
           name="google-site-verification"
           content="7A3fj-UIPzZxjzvRAJl21qHD81T2RZekt1LgbG8oR9U"
         />
-      </Head>
-      <GoogleAnalytics gaId="G-CQ1YKVRY0H" />
+
+ 	<Script
+          id="gtm-loader"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){
+                w[l]=w[l]||[];
+                w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s);
+                j.async=true;
+                j.src="https://up.upficient.com/cfjvnkyzzsbh.js?"+i;
+                f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','8=AQZOPS40RlswVClNLjFdSB5fQVRLXw8AVRcDHBMaAgsGFl0ZFRQ%3D');
+            `,
+          }}
+        />
+
+      </head>
       <body suppressHydrationWarning={true}>
-        <Suspense>
+	
+	<Suspense>
           <ToastProvider>
             <main className="wrapper-main">{children}</main>
           </ToastProvider>

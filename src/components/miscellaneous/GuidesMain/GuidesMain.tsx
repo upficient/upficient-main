@@ -25,10 +25,15 @@ function GuidesMain(type: any) {
     }
   };
 
+useEffect(() => {
+  let isMounted = true;
+
   const fetchPages = async () => {
     setLoading(true);
     try {
       const pagesData = await getAllPages(type.type, true);
+      if (!isMounted) return; // Prevent state update if unmounted
+      
       const filteredData = excludeSlug
         ? pagesData.filter(
             (page: any) =>
@@ -39,18 +44,21 @@ function GuidesMain(type: any) {
 
       setData(filteredData);
     } catch (error) {
-      console.error("Error fetching blogs:", error);
+      if (isMounted) console.error("Error fetching blogs:", error);
     } finally {
-      setLoading(false);
+      if (isMounted) setLoading(false);
     }
   };
 
-  useEffect(() => {
-    fetchPages();
-  }, [type?.type]);
+  fetchPages();
+
+  return () => {
+    isMounted = false; // Cleanup function
+  };
+}, [type.type, excludeSlug]);
 
   const navigateToBlog = (url: string) => {
-    redirect(`/${url}`);
+    router.push(`/${url}`);
   };
 
   const handlePageChange = (newPage: number) => {
@@ -64,9 +72,9 @@ function GuidesMain(type: any) {
 
   return (
     <>
-      {loading ? (
+       {loading && data.length === 0 ? (
         <LoaderComponent />
-      ) : (
+      ) : ( 
         <section className="allBlogs">
           <div className="container">
             <div className="row">
@@ -278,7 +286,7 @@ function GuidesMain(type: any) {
             </div>
           </div>
         </section>
-      )}
+      )} 
     </>
   );
 }
