@@ -16,6 +16,12 @@ const Footer = async () => {
     { name: "Management & Maintenance", href: "/management-maintenance" },
     { name: "ClickUp Consulting", href: "/clickup-consultants" },
   ];
+  const menuTemplates = [
+    { name: "Templates by Organisation", href: "/clickup-templates/product-category/organizations/" },
+    { name: "Template by Function", href: "/clickup-templates/product-category/function/" },
+    { name: "Operating Systems", href: "/clickup-templates/product-category/operating-systems/" },
+    { name: "Annual Subscription", href: "/clickup-templates/subscriber/" },
+  ];
   const menuItemsCompare = [
     { name: "ClickUp vs. Asana", href: "/clickup-guides/clickup-vs-asana" },
     {
@@ -31,6 +37,10 @@ const Footer = async () => {
       name: "Free Consultation",
       href: "https://calendly.com/upficient-consultation/30min-free-consultation?month=2025-01",
     },
+    {
+      name: "Newsletter Signup",
+      href: "#",
+    },
   ];
   const menuItemsLegal = [
     {
@@ -42,6 +52,16 @@ const Footer = async () => {
       name: "Terms & Conditions",
       href: "/clickup-templates/terms-conditions-of-purchase/",
       newTab: true,
+    },
+    {
+      name: "Refund Policy",
+      href: "/clickup-templates/refund_returns/",
+      newTab: true,
+    },
+    {
+      name: "Cookie Settings",
+      href: "",
+      newTab: false,
     },
   ];
   const menuItemsLearn = [
@@ -86,19 +106,19 @@ const Footer = async () => {
               </div>
               <div className="socialIcons d-flex">
                 <Link
-                  href="https://www.youtube.com/@Upficient"
+                  href="https://clutch.co/profile/upficient"
                   target="_blank"
-                  aria-label="Instagram link"
+                  aria-label="clucth link"
                 >
-                  <YoutubeIcon />
+                  <ClutchIcon />
                 </Link>
-                <Link
+                {/* <Link
                   href="https://www.instagram.com/upficient/"
                   target="_blank"
                   aria-label="Instagram link"
                 >
-                  <InstagramIcon />
-                </Link>
+                <InstagramIcon />
+                </Link> */}
                 <Link
                   href="https://www.linkedin.com/company/upficient"
                   target="_blank"
@@ -107,11 +127,11 @@ const Footer = async () => {
                   <LinkdinIcon />
                 </Link>
                 <Link
-                  href="https://clutch.co/profile/upficient"
+                  href="https://www.youtube.com/@Upficient"
                   target="_blank"
-                  aria-label="clucth link"
+                  aria-label="Instagram link"
                 >
-                  <ClutchIcon />
+                  <YoutubeIcon />
                 </Link>
               </div>
             </div>
@@ -119,6 +139,10 @@ const Footer = async () => {
               <div className="listbox">
                 <h3>Services</h3>
                 <ListItems items={menuItems} />
+              </div>
+              <div className="listbox">
+                <h3>Templates</h3>
+                <ListItems items={menuTemplates} />
               </div>
             </div>
             <div className="column column-20">
