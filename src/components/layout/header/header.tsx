@@ -231,10 +231,10 @@ const Header = () => {
             href: "/clickup-templates/product-category/organizations/",
             subItems: [
               { label: "Creative Agencies", href: "/clickup-templates/product-category/organizations/creative-agencies/" },
-              { label: "Healthcare Services", href: "/clickup-templates/product-category/organizations/healthcare-services/" },
-              { label: "Marketing Agencies", href: "/clickup-templates/product-category/organizations/marketing-agencies/" },
               { label: "Recruitment & Staffing Firms", href: "/clickup-templates/product-category/organizations/recruitment-staffing/" },
+              { label: "Healthcare Services", href: "/clickup-templates/product-category/organizations/healthcare-services/" },
               { label: "Professional Services", href: "/clickup-templates/product-category/organizations/professional-services/" },
+              { label: "Marketing Agencies", href: "/clickup-templates/product-category/organizations/marketing-agencies/" },
               { label: "Startups & Tech Teams", href: "/clickup-templates/product-category/organizations/startups-tech-teams/" },
             ],
           },
@@ -244,12 +244,12 @@ const Header = () => {
             description: "",
             href: "/clickup-templates/product-category/function/",
             subItems: [
-              { label: "Client Fulfilment", href: "/clickup-templates/product-category/categories/client-fulfilment-2/" },
+              { label: "Client Fulfilment", href: "/clickup-templates/product-category/categories/client-fulfilment/" },
+              { label: "Marketing", href: "/clickup-templates/product-category/categories/marketing/" },
               { label: "Creative & Design", href: "/clickup-templates/product-category/categories/creative-design/" },
+              { label: "Operations", href: "/clickup-templates/product-category/categories/operations/" },
               { label: "Engineering & Product", href: "/clickup-templates/product-category/categories/engineering-product/" },
-              { label: "Marketing", href: "/clickup-templates/product-category/categories/marketing-2/" },
-              { label: "Operations", href: "/clickup-templates/product-category/categories/operations-2/" },
-              { label: "Project Management", href: "/clickup-templates/product-category/categories/project-management-2/" },
+              { label: "Project Management", href: "/clickup-templates/product-category/categories/project-management/" },
               { label: "Support", href: "#" },
             ],
           },
@@ -407,27 +407,36 @@ const Header = () => {
         </div>
 
         <div className="mega-column outcomes">
-          <h3>Your Outcomes</h3>
-          <ul>
-            {megaMenu.outcomes.map((outcome: string, index: number) => (
-              <li key={index}>
-                <span>
-                  <svg
-                    aria-hidden="true"
-                    className="e-font-icon-svg e-fas-check"
-                    viewBox="0 0 512 512"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                      fill="#7ddb0080"
-                    ></path>
-                  </svg>
-                </span>
-                {outcome}
-              </li>
-            ))}
-          </ul>
+          <div>
+            <h3>Your Outcomes</h3>
+            <ul>
+              {megaMenu.outcomes.map((outcome: string, index: number) => (
+                <li key={index}>
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      className="e-font-icon-svg e-fas-check"
+                      viewBox="0 0 512 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                        fill="#7ddb0080"
+                      ></path>
+                    </svg>
+                  </span>
+                  {outcome}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="mega-menu-btm-img">
+              <img
+                className="img-contain"
+                src="https://www.upficient.com/clickup-templates/wp-content/uploads/2025/06/Asset-102-27-1024x284.png"
+                alt="Globe"
+              />
+          </div>
         </div>
       </div>
     );
