@@ -465,7 +465,7 @@ const Header = () => {
         <ul className="account-dropdown list-none">
           <li>
             <Link
-              href="https://www.upficient.com/clickup-templates/my-account/"
+              href="https://www.upficient.com/clickup-templates/login/"
               onClick={() => setAccountOpen(false)}
             >
               Login
@@ -473,7 +473,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              href="https://www.upficient.com/clickup-templates/my-account/"
+              href="https://www.upficient.com/clickup-templates/register/"
               onClick={() => setAccountOpen(false)}
             >
               Sign Up

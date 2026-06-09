@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
 				disallow: ["/dashboard"],
 			},
 		],
-		sitemap: `${url}/sitemap.xml`,
+		sitemap: [ `${url}/sitemap.xml` , `${url}/clickup-templates/sitemap_index.xml`],
 	};
 }
