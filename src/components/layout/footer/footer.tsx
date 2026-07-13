@@ -1,5 +1,4 @@
 import ClutchIcon from "@/components/Icons/ClutchIcon";
-import InstagramIcon from "@/components/Icons/InstagramIcon";
 import LinkdinIcon from "@/components/Icons/LinkdinIcon";
 import ListItems from "@/components/miscellaneous/listItems/ListItems";
 import { getImagePath } from "@/services/common.service";
@@ -8,12 +7,14 @@ import Link from "next/link";
 import "./footer.scss";
 import LazyMap from "@/components/miscellaneous/LazyMap/LazyMap";
 import YoutubeIcon from "@/components/Icons/YoutubeIcon";
+import FooterClient from "./footerClient";
+
+
 const Footer = async () => {
   const menuItems = [
     { name: "ClickUp Onboarding", href: "/clickup-onboarding-service" },
     { name: "Workspace Optimization", href: "/clickup-workspace-optimization" },
     { name: "ClickUp Integrations", href: "/clickup-integrations" },
-    { name: "Management & Maintenance", href: "/management-maintenance" },
     { name: "ClickUp Consulting", href: "/clickup-consultants" },
   ];
   const menuTemplates = [
@@ -24,10 +25,7 @@ const Footer = async () => {
   ];
   const menuItemsCompare = [
     { name: "ClickUp vs. Asana", href: "/clickup-guides/clickup-vs-asana" },
-    {
-      name: "ClickUp vs. Monday.com",
-      href: "/clickup-guides/clickup-vs-monday",
-    },
+    { name: "ClickUp vs. Monday.com", href: "/clickup-guides/clickup-vs-monday" },
     { name: "ClickUp vs. Trello", href: "/clickup-guides/clickup-vs-trello" },
     { name: "ClickUp vs. Notion", href: "/clickup-guides/clickup-vs-notion" },
   ];
@@ -36,10 +34,6 @@ const Footer = async () => {
     {
       name: "Free Consultation",
       href: "https://calendly.com/upficient-consultation/30min-free-consultation?month=2025-01",
-    },
-    {
-      name: "Newsletter Signup",
-      href: "#",
     },
   ];
   const menuItemsLegal = [
@@ -55,7 +49,7 @@ const Footer = async () => {
     },
     {
       name: "Refund Policy",
-      href: "/clickup-templates/refund_returns/",
+      href: "/clickup-templates/refund-returns/",
       newTab: true,
     },
     {
@@ -73,10 +67,11 @@ const Footer = async () => {
       href: "/clickup-guides/clickup-in-2025-the-ultimate-guide",
     },
     {
-      name: "How to Use ClickUp: Full  ClickUp Tutorial",
+      name: "How to Use ClickUp: Full ClickUp Tutorial",
       href: "/clickup-guides/how-to-use-clickup-full-clickup-tutorial",
     },
   ];
+
   return (
     <>
       <footer className="footer">
@@ -88,7 +83,7 @@ const Footer = async () => {
                   src={getImagePath("logomain.webp")}
                   width={500}
                   height={500}
-                  alt="Picture of the author"
+                  alt="Upficient logo"
                   className="img-contain"
                   loading="lazy"
                   unoptimized
@@ -96,9 +91,8 @@ const Footer = async () => {
               </div>
               <div className="para">
                 <p>
-                  Solutions architecture agency specialising in ClickUp
-                  workspace building, ClickUp optimization and workflow
-                  automation.
+                  Solutions architecture agency specialising in ClickUp workspace building, ClickUp
+                  optimization and workflow automation.
                 </p>
               </div>
               <div className="footerText">
@@ -108,33 +102,27 @@ const Footer = async () => {
                 <Link
                   href="https://clutch.co/profile/upficient"
                   target="_blank"
-                  aria-label="clucth link"
+                  aria-label="Clutch link"
                 >
                   <ClutchIcon />
                 </Link>
-                {/* <Link
-                  href="https://www.instagram.com/upficient/"
-                  target="_blank"
-                  aria-label="Instagram link"
-                >
-                <InstagramIcon />
-                </Link> */}
                 <Link
                   href="https://www.linkedin.com/company/upficient"
                   target="_blank"
-                  aria-label="Linkedin link"
+                  aria-label="LinkedIn link"
                 >
                   <LinkdinIcon />
                 </Link>
                 <Link
                   href="https://www.youtube.com/@Upficient"
                   target="_blank"
-                  aria-label="Instagram link"
+                  aria-label="YouTube link"
                 >
                   <YoutubeIcon />
                 </Link>
               </div>
             </div>
+
             <div className="column column-20">
               <div className="listbox">
                 <h3>Services</h3>
@@ -145,20 +133,24 @@ const Footer = async () => {
                 <ListItems items={menuTemplates} />
               </div>
             </div>
+
             <div className="column column-20">
               <div className="listbox">
                 <h3>Compare</h3>
                 <ListItems items={menuItemsCompare} />
               </div>
               <div className="listbox">
-                <h3>connect</h3>
+                <h3>Connect</h3>
                 <ListItems items={menuItemsConnect} />
+                {/* Newsletter Signup rendered as interactive client button */}
+                <FooterClient />
               </div>
               <div className="listbox">
-                <h3>LEGAL</h3>
+                <h3>Legal</h3>
                 <ListItems items={menuItemsLegal} />
               </div>
             </div>
+
             <div className="column column-20">
               <div className="listbox">
                 <h3>Learn</h3>
@@ -169,7 +161,7 @@ const Footer = async () => {
                   src={getImagePath("verified-Ambassador-v3-3.png")}
                   width={500}
                   height={500}
-                  alt="Picture of the author"
+                  alt="Verified Ambassador badge"
                   className="img-contain"
                   loading="lazy"
                   unoptimized
@@ -178,18 +170,16 @@ const Footer = async () => {
                   src={getImagePath("verifieldclickup.png")}
                   width={500}
                   height={500}
-                  alt="Picture of the author"
+                  alt="Verified ClickUp badge"
                   className="img-contain"
                   loading="lazy"
                   unoptimized
                 />
                 <Image
-                  src={getImagePath(
-                    "certificate-wt34kk2dgmun-1753795545-1-1-1.png",
-                  )}
+                  src={getImagePath("certificate-wt34kk2dgmun-1753795545-1-1-1.png")}
                   width={500}
                   height={500}
-                  alt="Picture of the author"
+                  alt="ClickUp certificate"
                   className="img-contain"
                   loading="lazy"
                   unoptimized

@@ -44,6 +44,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/public1/*
+
 upficient-backup.tar.gz
+
 /backup

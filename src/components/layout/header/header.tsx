@@ -150,6 +150,7 @@ const Header = () => {
             title: "Case Studies",
             description: "",
             href: "/case-study",
+            singleColumn: true,
             subItems: [
               { label: "Digifist", href: "/digifist" },
               { label: "Lento Agency", href: "/lento-agency" },
@@ -270,9 +271,10 @@ const Header = () => {
             title: "Annual Subscriptions",
             description: "",
             href: "/clickup-templates/subscriber/",
+            singleColumn: true,
             subItems: [
-              { label: "Premium", href: "/clickup-templates/subscriber/", badge: "unlimited access to all ClickUp templates in our store" },
-              { label: "Premium Plus", href: "/clickup-templates/subscriber/", badge: "everything in Premium + operational systems + more" },
+              { label: "Premium", labelClass: "label-premium", href: "/clickup-templates/subscriber/", badge: "unlimited access to all ClickUp templates in our store" },
+              { label: "Premium Plus", labelClass: "label-premium-plus", href: "/clickup-templates/subscriber/", badge: "everything in Premium + operational systems + more" },
             ],
           },
         ],
@@ -318,12 +320,6 @@ const Header = () => {
             href: "/clickup-integrations/",
           },
           {
-            icon: "Maintenance-Management.webp",
-            title: "Management & Maintenance",
-            description: "Your ongoing ClickUp journey with Upficient!",
-            href: "/management-maintenance/",
-          },
-          {
             icon: "ClickUp-Consulting.webp",
             title: "ClickUp Consulting",
             description: "Integrate with other tools to streamline your workflow",
@@ -365,10 +361,10 @@ const Header = () => {
           <h3>{column.title}</h3>
           {column.description && <p>{column.description}</p>}
           {column.subItems && column.subItems.length > 0 && (
-            <ul className="mega-sub-items list-none">
+            <ul className={`mega-sub-items list-none${column.singleColumn ? " single-col" : ""}`}>
               {column.subItems.map((sub: any, subIndex: number) => (
                 <li key={subIndex}>
-                  <Link href={sub.href} className="mega-sub-link">
+                  <Link href={sub.href} className={`mega-sub-link${sub.labelClass ? ` ${sub.labelClass}` : ""}`}>
                     {sub.label}
                     {sub.badge && (
                       <span className="sub-badge"> : {sub.badge}</span>
@@ -489,7 +485,7 @@ const Header = () => {
       {/* Mobile-only top bar (Book a Call + Account) */}
       <div className="mobile-headerBtn headerBtn">
         <div className="book-a-call">
-          <Link href="https://calendly.com/upficient-consultation/30min-free-consultation?month=2024-12">
+          <Link href="https://calendly.com/upficient_christopher-day/intro">
             Book a Call
           </Link>
         </div>
@@ -546,8 +542,8 @@ const Header = () => {
           {/* Desktop CTA buttons */}
           <div className="header-col3 headerBtn">
             <div className="book-a-call">
-              <Link href="https://calendly.com/upficient-consultation/30min-free-consultation?month=2024-12">
-                Book a Call
+              <Link href="https://calendly.com/upficient_christopher-day/intro">
+              Book a Call
               </Link>
             </div>
             <AccountDropdown refProp={accountRef} />

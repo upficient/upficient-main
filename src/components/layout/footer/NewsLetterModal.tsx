@@ -81,25 +81,7 @@ const NewsletterModal = ({ isOpen, onClose }: NewsletterModalProps) => {
         </button>
 
         <div className="newsletter-header">
-          <span className="newsletter-badge">Newsletter</span>
-          <div className="newsletter-icon">
-            <svg viewBox="0 0 80 60" width="80" height="60" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="10" width="76" height="48" rx="6" fill="white" fillOpacity="0.95" />
-              <polyline
-                points="2,10 40,36 78,10"
-                fill="none"
-                stroke="#a855f7"
-                strokeWidth="2.5"
-                strokeLinejoin="round"
-              />
-              <line x1="2" y1="58" x2="20" y2="38" stroke="#e0c7fb" strokeWidth="1.5" />
-              <line x1="78" y1="58" x2="60" y2="38" stroke="#e0c7fb" strokeWidth="1.5" />
-              <circle cx="62" cy="14" r="10" fill="#f97316" />
-              <text x="62" y="18" textAnchor="middle" fontSize="12" fill="white" fontWeight="700">
-                !
-              </text>
-            </svg>
-          </div>
+          <img src="https://www.upficient.com/clickup-templates/wp-content/uploads/2025/09/Newsletter-design-2.png" alt="Newsletter"></img>
         </div>
 
         <div className="newsletter-body">

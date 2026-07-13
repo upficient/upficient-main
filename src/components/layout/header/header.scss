@@ -58,6 +58,7 @@
         font-size: 16px;
         line-height: 24px;
         position: relative;
+        width: 100%;
       }
     }
   }
@@ -324,8 +325,7 @@
     }
  
     .sub-badge {
-      font-size: 12px;
-      color: #888;
+      color: #a2a1b1;
       font-weight: 400;
     }
   }
@@ -352,6 +352,18 @@ ul.mega-sub-items.list-none {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+ul.mega-sub-items.list-none.single-col {
+  grid-template-columns: 1fr;
+}
+
+.mega-sub-link.label-premium {
+  color: #a064ff !important; 
+}
+
+.mega-sub-link.label-premium-plus {
+  color: #FFA736 !important;
+}
+
 .header-wrapper{
   display: flex;
   align-items: center;
