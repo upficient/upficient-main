@@ -31,6 +31,9 @@ const ServiceBox: React.FC<ServiceBoxProps> = ({
   buttonTextColor,
   textColor,
 }) => {
+  if (title?.trim() === "Management & Maintenance") {
+    return null;
+  }
   return (
     <div className="col-lg-4 col-md-6 servicesBoxmain">
       <div
