@@ -64,6 +64,7 @@ const HeroSectionNew: React.FC<{ data: any }> = ({ data }) => {
                   }}
                 >
                   <Link
+                    target="_blank"
                     href="https://calendly.com/upficient-consultation/clickup-consulting"
                     className="btn-link"
                     style={{

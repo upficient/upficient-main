@@ -174,6 +174,11 @@ export const menuData = [
 		icon: <FileTextOutline />,
 		link: "/dashboard/case-studies",
 	},
+		{
+		name: "Contacts",
+		icon: <PeopleOutline />,
+		link: "/dashboard/contacts",
+	},
 	{
 		name: "Pages",
 		icon: <FileOutline />,

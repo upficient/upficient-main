@@ -485,7 +485,7 @@ const Header = () => {
       {/* Mobile-only top bar (Book a Call + Account) */}
       <div className="mobile-headerBtn headerBtn">
         <div className="book-a-call">
-          <Link href="https://calendly.com/upficient_christopher-day/intro">
+          <Link target="_blank" href="https://calendly.com/upficient_christopher-day/intro">
             Book a Call
           </Link>
         </div>
@@ -542,7 +542,7 @@ const Header = () => {
           {/* Desktop CTA buttons */}
           <div className="header-col3 headerBtn">
             <div className="book-a-call">
-              <Link href="https://calendly.com/upficient_christopher-day/intro">
+              <Link target="_blank" href="https://calendly.com/upficient_christopher-day/intro">
               Book a Call
               </Link>
             </div>

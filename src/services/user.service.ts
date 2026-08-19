@@ -1,6 +1,7 @@
 "use server";
 import { createSession, sendMail } from "@/app/lib";
 import { Users as userType } from "@/interfaces/users";
+import { Contacts as contactType } from "@/interfaces/contacts";
 import { connectToDatabase } from "@/lib/mongodb";
 import Contacts, { IContacts } from "@/models/Contacts";
 import Users from "@/models/Users";
@@ -175,24 +176,20 @@ export const deleteUser = async (id: string) => {
 
 export const loginUser = async (email: string, password: string) => {
   try {
-    // Ensure database connection
     await connectToDatabase();
 
-    // Use `lean()` to return plain JavaScript objects
     const user: any = await Users.findOne({ email }).lean();
 
     if (!user) {
       throw new Error("Invalid credentials.");
     }
 
-    // Validate the password
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
     if (!isPasswordValid) {
       throw new Error("Invalid credentials.");
     }
 
-    // Create a session for the user
     const session = await createSession(user._id.toString());
     return session;
   } catch (error) {
@@ -336,5 +333,42 @@ export const contactUs = async (form: Partial<IContacts>) => {
     return true;
   } catch (error) {
     throw new Error("Failed to contact us.");
+  }
+};
+
+export const getContacts = async (): Promise<contactType[]> => {
+  try {
+    await connectToDatabase();
+    const contacts = await Contacts.find({}).sort({ createdAt: -1 }).lean();
+    const serializedContacts = contacts.map((contact: any) => ({
+      ...contact,
+      _id: contact._id?.toString(),
+      createdAt: contact.createdAt?.toISOString(),
+      updatedAt: contact.updatedAt?.toISOString(),
+    }));
+
+    return serializedContacts;
+  } catch (error) {
+    throw new Error("Failed to get contacts.");
+  }
+};
+
+export const getContactById = async (id: string): Promise<contactType | null> => {
+  try {
+    await connectToDatabase();
+    const contact = await Contacts.findById(id).lean();
+
+    if (!contact) {
+      throw new Error("Contact not found");
+    }
+
+    return {
+      ...contact,
+      _id: contact._id?.toString(),
+      createdAt: contact.createdAt?.toISOString(),
+      updatedAt: contact.updatedAt?.toISOString(),
+    };
+  } catch (error) {
+    throw new Error("Failed to fetch contact details.");
   }
 };
